@@ -1,8 +1,4 @@
 $ScriptFullPath = $MyInvocation.MyCommand.Definition
-$ScriptDir = Split-Path -Parent $ScriptFullPath
-
-Import-Module "$ScriptDir\SimpleMenu\SimpleMenu.psm1" -Force
-
 
 
 Function InstallService() {
