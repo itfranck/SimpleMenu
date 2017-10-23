@@ -220,10 +220,4 @@ function Invoke-SimpleMenu {
     
 }
 
-function set-SimpleMenuItem {
-    param(
-
-    )
-}
-
 
