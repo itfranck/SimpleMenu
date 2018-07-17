@@ -4,4 +4,3 @@ cls
 Invoke-Build -File '.\SimpleMenu.build.ps1'
  
 
-
