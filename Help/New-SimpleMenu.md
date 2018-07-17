@@ -1,6 +1,6 @@
 ---
-external help file: SimpleMenu-Help.xml
-Module Name:
+external help file: SimpleMenu-help.xml
+Module Name: SimpleMenu
 online version:
 schema: 2.0.0
 ---
@@ -53,8 +53,9 @@ That way, the declaration looks very similar to the end product.
 
 ## PARAMETERS
 
-### -Title
-Defines menu title.
+### -Id
+ID of the menu.
+Currently unusedé
 
 ```yaml
 Type: Object
@@ -62,7 +63,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -83,6 +84,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Title
+Defines menu title.
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TitleForegroundColor
 Foreground color of the menu title.
 
@@ -90,6 +106,7 @@ Foreground color of the menu title.
 Type: ConsoleColor
 Parameter Sets: (All)
 Aliases:
+Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
 Position: 2
@@ -98,25 +115,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-ID of the menu.
-Currently unusedé
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

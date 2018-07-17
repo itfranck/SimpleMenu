@@ -1,6 +1,6 @@
 ---
-external help file: SimpleMenu-Help.xml
-Module Name:
+external help file: SimpleMenu-help.xml
+Module Name: SimpleMenu
 online version:
 schema: 2.0.0
 ---
@@ -31,18 +31,18 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -Title
-Display text of menu item.
+### -Action
+Scriptblock to be invoked when menu item is selected.
 
 ```yaml
-Type: String
+Type: ScriptBlock
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -53,6 +53,7 @@ Foreground color of menu item.
 Type: ConsoleColor
 Parameter Sets: (All)
 Aliases:
+Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
 Position: Named
@@ -93,24 +94,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Action
-Scriptblock to be invoked when menu item is selected.
-
-```yaml
-Type: ScriptBlock
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Quit
-If defined, choosing this menu item will exit the current menu.
-If the current menu is a submenu, this will bring back to parent menu,
+### -NoPause
+If this switch is set, menu won't pause after executing the chosen action.
 
 ```yaml
 Type: SwitchParameter
@@ -124,8 +109,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NoPause
-If this switch is set, menu won't pause after executing the chosen action.
+### -Quit
+If defined, choosing this menu item will exit the current menu.
+If the current menu is a submenu, this will bring back to parent menu,
 
 ```yaml
 Type: SwitchParameter
@@ -154,9 +140,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Title
+Display text of menu item.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
