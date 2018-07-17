@@ -24,7 +24,6 @@ Submenus should be created prior to their parent menu to allow adding them when 
 ## EXAMPLES
 
 ### Complete menu with submenu
-@{paragraph=PS C:\\\>}
 
 ```
 $OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
