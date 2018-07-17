@@ -11,12 +11,12 @@ Locale: {{ Update Locale }}
 {{Manually Enter Description Here}}
 
 ## SimpleMenu Cmdlets
-### [Invoke-SimpleMenu](./Help/Invoke-SimpleMenu.md)
+### [Invoke-SimpleMenu](/Help/Invoke-SimpleMenu.md)
 Calls menu interface.
 
-### [New-SimpleMenu](./Help/New-SimpleMenu.md)
+### [New-SimpleMenu](/Help/New-SimpleMenu.md)
 Create SimpleMenu interface.
 
-### [New-SimpleMenuItem](./Help/New-SimpleMenuItem.md)
+### [New-SimpleMenuItem](/Help/New-SimpleMenuItem.md)
 Create SimpleMenu item
 
