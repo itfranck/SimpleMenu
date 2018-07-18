@@ -4,11 +4,12 @@ function Invoke-SimpleMenu {
         [SimpleMenu]$Menu
     )
     $Debug = ($psboundparameters.debug.ispresent -eq $true)
-    
+
     [WarningMessages]$InvalidChoice = [WarningMessages]::None
+
     while ($true) {
         if (-not   $Debug ){Clear-Host}
-        
+
         $Menu.Print()
         if (-not ($InvalidChoice -eq [WarningMessages]::None) ) {
             Switch($InvalidChoice) {
@@ -20,8 +21,8 @@ function Invoke-SimpleMenu {
                 }
             }
 
-            
-            $InvalidChoice = [WarningMessages]::Undefined
+
+            $InvalidChoice = [WarningMessages]::None
         }
 
         if ([console]::IsInputRedirected) {
@@ -31,22 +32,22 @@ function Invoke-SimpleMenu {
             [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
             $Line = $LineRaw.KeyChar.ToString()
         }
-        
-        
+
+
         $Result = @($Menu.Items | Where runtimeKey -eq $Line )
 
-               
-               
+
+
         if ($Result.Count -gt 0) {
             $ShouldNotPause = $Result.NoPause
 
             if ($InvalidChoice -eq [WarningMessages]::Undefined) {
                 if (-not   $Debug ){Clear-Host}
                 $Menu.Print()
-                
+
                 $InvalidChoice = [WarningMessages]::None
             }
-            
+
             if ($Result.Action -ne $null) {
                 try {
                     ($Result.Action).invoke()
@@ -55,12 +56,12 @@ function Invoke-SimpleMenu {
                     Write-Error $_
                     $ShouldNotPause = $false
                 }
-                
+
                 if ($ShouldNotPause -eq $false) {Pause}
 
             }
             else {
-                if (-not ($Result.IsExit) -and ($Result.Submenu -eq $null)) {
+                if (-not ($Result.IsExit) -and ( $null -eq $Result.Submenu)) {
                     $InvalidChoice = [WarningMessages]::NoActionDefined
                 }
             }
@@ -73,18 +74,13 @@ function Invoke-SimpleMenu {
         if ($Result.Submenu -ne $Null) {
             Invoke-SimpleMenu $Result.Submenu -debug:$Debug
         }
-        
+
         if ($Result.IsExit -eq $true) {
             return
         }
-        
+
     }
-        
-    
 
-    
-
-    
 }
 
 
