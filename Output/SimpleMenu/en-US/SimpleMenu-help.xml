@@ -10,7 +10,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Calls the menu interface and loops until the menu is quitted through items defined with the Quit switch parameter. The menu will produce warning if undefined keys are pressed or no actions for a specific menu item was defined.</maml:para>
+      <maml:para>Calls the menu interface and loops until the menu is exited through items defined with the Quit switch parameter. The menu will produce warning if undefined keys are pressed or no actions for a specific menu item was defined.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -80,7 +80,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Create SimpleMenu Interface and defines menu item. Submenus should be created prior to their parent menu to allow adding them when creating it.</maml:para>
+      <maml:para>Create SimpleMenu Interface and defines menu item. Submenus should be created prior to their parent menu to allow adding them when creating the latter.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -237,9 +237,11 @@ $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
     "Change title demo"                         | New-SimpleMenuItem -Id 'ChangeTitle'  -Action {$Menu.GetItem('ChangeTitle').Title = 'New title !'} -NoPause
     "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
     "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
-)</dev:code>
+)
+
+Invoke-SimpleMenu -Menu $Menu</dev:code>
         <dev:remarks>
-          <maml:para>This example create a menu and a submenu. The submenu is created first, then the main menu. Special char keys are defined for some options.  For better readability, each lines of the items array is for a specific menu item, with title being passed as a pipe parameter. That way, the declaration looks very similar to the end product.</maml:para>
+          <maml:para>This example create a menu and a submenu. The submenu is created first, then the main menu. Special char keys are defined for some options.  For better readability, each lines of the items array is for a specific menu item, with title being passed as a pipe parameter. That way, the declaration looks very similar to the actual menu that will be displayed.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

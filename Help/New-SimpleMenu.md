@@ -43,7 +43,7 @@ $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
     "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
 )
 
-Invoke-SimpleMenu -Menu $Menu 
+Invoke-SimpleMenu -Menu $Menu
 ```
 
 This example create a menu and a submenu.
