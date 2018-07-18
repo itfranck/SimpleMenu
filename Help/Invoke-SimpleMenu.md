@@ -17,7 +17,7 @@ Invoke-SimpleMenu [[-Menu] <SimpleMenu>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Calls the menu interface and loops until the menu is quitted through items defined with the Quit switch parameter.
+Calls the menu interface and loops until the menu is exited through items defined with the Quit switch parameter.
 The menu will produce warning if undefined keys are pressed or no actions for a specific menu item was defined.
 
 ## EXAMPLES
