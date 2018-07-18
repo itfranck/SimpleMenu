@@ -42,13 +42,15 @@ $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
     "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
     "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
 )
+
+Invoke-SimpleMenu -Menu $Menu 
 ```
 
 This example create a menu and a submenu.
 The submenu is created first, then the main menu.
 Special char keys are defined for some options. 
 For better readability, each lines of the items array is for a specific menu item, with title being passed as a pipe parameter.
-That way, the declaration looks very similar to the end product.
+That way, the declaration looks very similar to the actual menu that will be displayed..
 
 ## PARAMETERS
 
