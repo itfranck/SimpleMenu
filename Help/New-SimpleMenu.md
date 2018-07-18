@@ -19,7 +19,7 @@ New-SimpleMenu [[-Title] <Object>] [[-Items] <Object>] [[-TitleForegroundColor] 
 
 ## DESCRIPTION
 Create SimpleMenu Interface and defines menu item.
-Submenus should be created prior to their parent menu to allow adding them when creating it.
+Submenus should be created prior to their parent menu to allow adding them when creating the latter.
 
 ## EXAMPLES
 
@@ -50,7 +50,7 @@ This example create a menu and a submenu.
 The submenu is created first, then the main menu.
 Special char keys are defined for some options. 
 For better readability, each lines of the items array is for a specific menu item, with title being passed as a pipe parameter.
-That way, the declaration looks very similar to the actual menu that will be displayed..
+That way, the declaration looks very similar to the actual menu that will be displayed.
 
 ## PARAMETERS
 
