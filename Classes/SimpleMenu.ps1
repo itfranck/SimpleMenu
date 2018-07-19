@@ -2,7 +2,7 @@ class SimpleMenu {
     [System.Collections.Generic.List[PSObject]]$Items
     [String]$Title
     [ConsoleColor]$TitleForeGround = [ConsoleColor]::Cyan
-
+    [SimpleMenu]$Parent = $null
 
     SimpleMenu() {
         $This.Items = New-Object System.Collections.Generic.List[PSObject]

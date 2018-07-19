@@ -127,6 +127,6 @@ task ExportHelp -if (Test-Path -Path "$script:ModuleRoot\Help") {
     Update-MarkdownHelpModule -Path "$script:ModuleRoot\Help" -RefreshModulePage
     New-ExternalHelp -Path "$script:ModuleRoot\Help" -OutputPath $script:HelpPath
     $ModuleContent = Get-Content "$script:ModuleRoot\Help\$($script:ModuleName).md" -raw
-    $content -replace '(?:\((.*\.md)\))','(Help/$1)'  | Out-File -FilePath "$script:ModuleRoot\README.md"
+    $ModuleContent -replace '(?:\((.*\.md)\))','(Help/$1)'  | Out-File -FilePath "$script:ModuleRoot\README.md"
     remove-item  "$script:ModuleRoot\Help\$($script:ModuleName).md" 
 }
