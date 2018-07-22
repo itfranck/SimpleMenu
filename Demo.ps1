@@ -15,7 +15,7 @@ Function UninstallService() {
 
 
 $OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
-    "Enter Powershell prompt"                   | New-SimpleMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
+    "Enter Powershell prompt"                   | New-SimpleMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
     "Edit this menu"                            | New-SimpleMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
     "Display script full path"                  | New-SimpleMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
     "Back"                                      | New-SimpleMenuItem -Key b -Quit
@@ -23,12 +23,11 @@ $OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Item
 
 
 $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
-    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} -NoPause
-    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService} -NoPause
+    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
+    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService} 
     "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
-    "Change title demo"                         | New-SimpleMenuItem -Id 'ChangeTitle'  -Action {$Menu.GetItem('ChangeTitle').Title = 'New title !'} -NoPause
-    "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
-    "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
+    "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} 
+    "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
 )
 
 

@@ -38,7 +38,6 @@ $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
     "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
     "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService}
     "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
-    "Change title demo"                         | New-SimpleMenuItem -Id 'ChangeTitle'  -Action {$Menu.GetItem('ChangeTitle').Title = 'New title !'} -NoPause
     "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
     "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
 )
