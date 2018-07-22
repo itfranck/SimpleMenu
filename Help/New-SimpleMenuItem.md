@@ -14,7 +14,7 @@ Create SimpleMenu item
 
 ```
 New-SimpleMenuItem [[-Title] <String>] [-ForegroundColor <ConsoleColor>] [-Id <Object>] [-Key <Object>]
- [-Action <ScriptBlock>] [-Quit] [-NoPause] [-Submenu <Object>] [<CommonParameters>]
+ [-Action <ScriptBlock>] [-Quit] [-Pause] [-Submenu <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,8 +94,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NoPause
-If this switch is set, menu won't pause after executing the chosen action.
+### -Pause
+{{Fill Pause Description}}
 
 ```yaml
 Type: SwitchParameter

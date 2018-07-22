@@ -341,9 +341,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>NoPause</maml:name>
+          <maml:name>Pause</maml:name>
           <maml:Description>
-            <maml:para>If this switch is set, menu won't pause after executing the chosen action.</maml:para>
+            <maml:para>{{Fill Pause Description}}</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -426,9 +426,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>NoPause</maml:name>
+        <maml:name>Pause</maml:name>
         <maml:Description>
-          <maml:para>If this switch is set, menu won't pause after executing the chosen action.</maml:para>
+          <maml:para>{{Fill Pause Description}}</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>

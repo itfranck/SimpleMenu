@@ -1,7 +1,8 @@
 function Invoke-SimpleMenu {
     [cmdletbinding()]
     param(
-        [SimpleMenu]$Menu
+        [ValidateNotNull()][SimpleMenu]$Menu
+
     )
     $Debug = ($psboundparameters.debug.ispresent -eq $true)
 
@@ -21,7 +22,7 @@ function Invoke-SimpleMenu {
         
 
         if ($Result.Count -gt 0) {
-            $ShouldNotPause = $Result.NoPause
+            $ShouldPause = $Result.Pause
             if ($Result.Submenu -eq $null -or $Result.IsExit -eq $false ) {
                 if (-not $Debug ){Clear-Host} ; $Menu.Print()
             }
@@ -32,10 +33,10 @@ function Invoke-SimpleMenu {
                 }
                 catch {
                     Write-Error $_
-                    $ShouldNotPause = $false
+                    $ShouldPause = $true
                 }
 
-                if ($ShouldNotPause -eq $false) {Pause}
+                if ($ShouldPause -eq $true) {Pause;  if (-not $Debug ){Clear-Host} ; $Menu.Print()  }
 
             }
             else {
@@ -78,15 +79,6 @@ function Invoke-SimpleMenu {
 
             $InvalidChoice = [WarningMessages]::None
         }
-
-      
-
-
-        
-
-
-
-     
 
     }
 

@@ -10,17 +10,16 @@ function New-SimpleMenu($Title, $Items, [ConsoleColor]$TitleForegroundColor, $Id
         if (-not [String]::IsNullOrWhiteSpace($item.Key)){
             if ($AllKeys.Contains($Item.Key)) {
                 Write-Error "The key $($item.key) is already assigned to another element of this menu and cannot be assigned to item $($item.Title)."
+                return $null
                         }
                         else {
                             $AllKeys.Add($Item.Key) | Out-Null
                         }
         }
 
-        $Menu.Items.Add($Item)    
+        $Menu.Items.Add($Item)
     }
 
 
-    
-    
     return $Menu
 }

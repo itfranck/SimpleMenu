@@ -9,7 +9,7 @@ function New-SimpleMenuItem {
         [ValidatePattern('^[a-zA-Z]$')]$Key = $null,
         [ScriptBlock]$Action = $null,
         [Switch]$Quit,
-        [Switch]$NoPause,
+        [Switch]$Pause,
         $Submenu
     
 
@@ -23,7 +23,7 @@ function New-SimpleMenuItem {
             Action       = ''
             IsExit       = $false
             Submenu      = $Null
-            NoPause = $NoPause
+            Pause = $Pause
         }
         
         $WriteHostParams = @{}
@@ -36,18 +36,14 @@ function New-SimpleMenuItem {
         $MenuItem.Action = $Action
         $MenuItem.IsExit = $Quit
         $MenuItem.Submenu = $Submenu
-        
-        
-        
+
     }
     Process {
         if ($_ -eq $null) {
             $_ = $Title
         }
         $MenuItem.Title = $_
-        
-        
-        
+
     }
     End {
         return $MenuItem
