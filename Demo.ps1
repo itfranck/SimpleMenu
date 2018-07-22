@@ -1,5 +1,5 @@
 $ScriptFullPath = $MyInvocation.MyCommand.Definition
-
+Import-Module '.\SimpleMenu.psm1' -Force
 
 Function InstallService() {
     Write-host 'installing service logic here...'
@@ -23,8 +23,8 @@ $OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Item
 
 
 $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
-    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
-    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService}
+    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} -NoPause
+    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService} -NoPause
     "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
     "Change title demo"                         | New-SimpleMenuItem -Id 'ChangeTitle'  -Action {$Menu.GetItem('ChangeTitle').Title = 'New title !'} -NoPause
     "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
@@ -34,9 +34,3 @@ $Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
 
 
 Invoke-SimpleMenu -Menu $Menu 
-
-
-
-
-  
-

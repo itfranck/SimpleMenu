@@ -44,6 +44,9 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-.apdisk
+.apdisks
 Publish.ps1
-SimpleMenu.Help.pshproj
+Output/stats.json
+Output/testResults*.xml
+test.ps1
+test.ps1

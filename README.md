@@ -1,4 +1,6 @@
-# SimpleMenu
-Powershell module to create simple elegant menu. 
+# SimpleMenu Module
+## Description
+A menu creator to provides a simple interface to works with. 
 
-documentation to come.
+
+[Documentation](Help/README.md)
