@@ -15,26 +15,14 @@ function New-SimpleMenuItem {
 
     )
     Begin {
-        $MenuItem = New-Object  PSObject -Property  @{
-            'Title'      = ''
-            'Id'         = ''
-            'Key'        = ''
-            'runtimeKey' = ''
-            Action       = ''
-            IsExit       = $false
-            Submenu      = $Null
-            Pause = $Pause
-        }
+        $MenuItem = New-Object -TypeName SimpleMenuItem
         
-        $WriteHostParams = @{}
-        if ($PSBoundParameters.ContainsKey('ForegroundColor')) {
-            $WriteHostParams.add('ForegroundColor', $ForegroundColor)
-        }
+        if ($PSBoundParameters.ContainsKey('ForegroundColor')) {$MenuItem.ForegroundColor = $ForegroundColor }
 
         $MenuItem.Id = $Id
         $MenuItem.Key = $Key
         $MenuItem.Action = $Action
-        $MenuItem.IsExit = $Quit
+        $MenuItem.Quit = $Quit
         $MenuItem.Submenu = $Submenu
 
     }

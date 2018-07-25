@@ -23,7 +23,7 @@ function Invoke-SimpleMenu {
 
         if ($Result.Count -gt 0) {
             $ShouldPause = $Result.Pause
-            if ($Result.Submenu -eq $null -or $Result.IsExit -eq $false ) {
+            if ($Result.Submenu -eq $null -or $Result.Quit -eq $false ) {
                 if (-not $Debug ){Clear-Host} ; $Menu.Print()
             }
 
@@ -40,7 +40,7 @@ function Invoke-SimpleMenu {
 
             }
             else {
-                if (-not ($Result.IsExit) -and ( $null -eq $Result.Submenu)) {
+                if (-not ($Result.Quit) -and ( $null -eq $Result.Submenu)) {
                     $InvalidChoice = [WarningMessages]::NoActionDefined
                 }
             }
@@ -56,7 +56,7 @@ function Invoke-SimpleMenu {
             Invoke-SimpleMenu $Result.Submenu -debug:$Debug
         }
 
-        if ($Result.IsExit -eq $true) {
+        if ($Result.Quit -eq $true) {
             if ($Menu.Parent -ne $null) {
                 if (-not   $Debug ){Clear-Host}
                 $Menu.Parent.Print()
