@@ -1,7 +1,10 @@
 function New-SimpleMenu {
     [cmdletbinding()]
     Param(
-        $Title, $Items, [ConsoleColor]$TitleForegroundColor, $Id
+        [String]$Title,
+        [SimpleMenuItem[]]$Items, 
+        [ConsoleColor]$TitleForegroundColor,
+        [String]$Id
     )
     $Menu = New-Object -TypeName SimpleMenu
     $Menu.Title = $Title
@@ -13,7 +16,7 @@ function New-SimpleMenu {
     Foreach ($Item in $Items) {
         if (-not [String]::IsNullOrWhiteSpace($item.Key)){
             if ($AllKeys.Contains($Item.Key)) {
-                Write-Error "The key $($item.key) is already assigned to another element of this menu and cannot be assigned to item $($item.Title)."
+                Write-Error $Warning_KeyAlreadyAssigned
                 return $null
                         }
                         else {

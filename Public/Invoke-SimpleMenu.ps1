@@ -1,14 +1,24 @@
 function Invoke-SimpleMenu {
     [cmdletbinding()]
     param(
-        [ValidateNotNull()][SimpleMenu]$Menu
+        [ValidateNotNull()][SimpleMenu]$Menu,
+        [Switch]$PassThru,
+        [ValidateNotNullOrEmpty()]
+        [String]$lang = 'en'
 
     )
+
+    if ($lang -ne 'en') {
+        init -lang $Lang
+    }
+
+    if ($PassThru) {$Menu.Print(); return}
     $Debug = ($psboundparameters.debug.ispresent -eq $true)
 
     [WarningMessages]$InvalidChoice = [WarningMessages]::None
     if (-not   $Debug ){Clear-Host}
     $Menu.Print()
+    
     while ($true) {
       
         if ([console]::IsInputRedirected) {
@@ -22,6 +32,7 @@ function Invoke-SimpleMenu {
         
 
         if ($Result.Count -gt 0) {
+            $Result =$Result |select -First 1
             $ShouldPause = $Result.Pause
             if ($Result.Submenu -eq $null -or $Result.Quit -eq $false ) {
                 if (-not $Debug ){Clear-Host} ; $Menu.Print()
@@ -29,7 +40,9 @@ function Invoke-SimpleMenu {
 
             if ($Result.Action -ne $null) {
                 try {
-                    ($Result.Action).invoke()
+                    # Need to recreate the received scriptblock otherwise the $_ variable does not work :(
+                    $CurrentTitle = $Result.Title
+                    $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action)))
                 }
                 catch {
                     Write-Error $_
@@ -53,7 +66,7 @@ function Invoke-SimpleMenu {
 
         if ($Result.Submenu -ne $Null) {
             $Result.Submenu.Parent = $Menu
-            Invoke-SimpleMenu $Result.Submenu -debug:$Debug
+            Invoke-SimpleMenu $Result.Submenu 
         }
 
         if ($Result.Quit -eq $true) {
@@ -68,11 +81,11 @@ function Invoke-SimpleMenu {
 
         if ( ($InvalidChoice -ne [WarningMessages]::None) ) {
             Switch($InvalidChoice) {
-                ([WarningMessages]::NoActionDefined) {  Write-Warning 'No actions have been defined for this menu item.'}
+                ([WarningMessages]::NoActionDefined) {  Write-Warning $Messages.Warning_NoActions}
                 ([WarningMessages]::InvalidChoice) {
-                    Write-Warning "'$Line' is not a valid choice"
+                    Write-Warning ($Messages.Warning_InvalidChoice -f $Line)
                     $IDs = ($menu.Items | Select-Object -ExpandProperty runtimeKey) -join ','
-                    Write-Host "Valid choices are: $IDs"
+                    Write-Host ($Messages.info_validChoices -f $IDs)
                 }
             }
 

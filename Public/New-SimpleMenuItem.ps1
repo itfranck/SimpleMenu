@@ -10,7 +10,7 @@ function New-SimpleMenuItem {
         [ScriptBlock]$Action = $null,
         [Switch]$Quit,
         [Switch]$Pause,
-        $Submenu
+        [SimpleMenu]$Submenu
     
 
     )

@@ -3,7 +3,7 @@ class SimpleMenuItem {
     [System.ConsoleColor]$ForegroundColor
     [String]$Id
     $Key = $null
-    [SimpleMenuItem]$Parent = $null
+    [SimpleMenu]$Parent = $null
     [Switch]$Pause
     [Switch]$Quit
     [SimpleMenu]$Submenu
