@@ -30,8 +30,7 @@
 
     $OutTitle = "{0} $($This.Title){2} {1}" -f $Arrow1,$Arrow2,$Arrow3
     Write-Host $OutTitle  -ForegroundColor Cyan
-    Write-host ($this | Invoke-CommandPiped -ScriptBlock ($CurrentItem.Pages[$CurrentItem.Index]) )
-
+    Write-host ($this | Invoke-CommandPiped -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) )
     }
 
 [Void]PreviousBoard() {
