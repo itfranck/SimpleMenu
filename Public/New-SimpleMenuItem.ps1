@@ -10,7 +10,7 @@ function New-SimpleMenuItem {
         [ScriptBlock]$Action = $null,
         [Switch]$Quit,
         [Switch]$Pause,
-        [SimpleMenu]$Submenu
+        [psobject]$Submenu
     
 
     )
@@ -27,12 +27,13 @@ function New-SimpleMenuItem {
 
     }
     Process {
+        
         if ($_ -eq $null) {
             $_ = $Title
         }
-        $MenuItem.Title = $_
-
-    }
+        $MenuItem.Title = $_ 
+        
+    }     
     End {
         return $MenuItem
     }
