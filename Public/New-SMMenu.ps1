@@ -1,12 +1,12 @@
-function New-SimpleMenu {
+function New-SMMenu {
     [cmdletbinding()]
     Param(
         [String]$Title,
-        [SimpleMenuItem[]]$Items, 
+        [SMMenuItem[]]$Items, 
         [ConsoleColor]$TitleForegroundColor,
         [String]$Id
     )
-    $Menu = New-Object -TypeName SimpleMenu
+    $Menu = New-Object -TypeName SMMenu
     $Menu.Title = $Title
     if ($PSBoundParameters.ContainsKey('TitleForegroundColor')) {
         $Menu.TitleForeGround = $TitleForegroundColor

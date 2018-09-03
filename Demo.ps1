@@ -15,11 +15,11 @@ Function UninstallService() {
 
 
 
-$OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red   -Items @(
-   "Enter Powershell prompt"                   | New-SimpleMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
-   "Edit this menu"                            | New-SimpleMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
-   "Display script full path"                  | New-SimpleMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
-   "Back"                                      | New-SimpleMenuItem -Key b -Quit
+$OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red   -Items @(
+   "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
+   "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
+   "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
+   "Back"                                      | New-SMMenuItem -Key b -Quit
 )
 
 #[Console]::InputEncoding =[System.Text.Encoding]::UTF8
@@ -28,24 +28,24 @@ $OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red   -Ite
 
 
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
-#New-SimpleMenuItem -Submenu $OptionsMenu -Debug
+#New-SMMenuItem -Submenu $OptionsMenu -Debug
 
 
-$Menu = New-SimpleMenu  -Title 'Service manager' -Items @(
-   "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
-   "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService} 
-   'Empty'                                     | New-SimpleMenuItem 
-   "Change this menu"                          | New-SimpleMenuItem -Id 'ChangeItem' -Action {$_.Title = 'Yay !';cls;$Menu.Print();}
-   "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} 
-   "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
-   "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
+$Menu = New-SMMenu  -Title 'Service manager' -Items @(
+   "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
+   "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService} 
+   'Empty'                                     | New-SMMenuItem 
+   "Change this menu"                          | New-SMMenuItem -Id 'ChangeItem' -Action {$_.Title = 'Yay !';cls;$Menu.Print();}
+   "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} 
+   "Options"                                   | New-SMMenuItem -key 'O' -submenu $OptionsMenu
+   "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
 )
 
 
 $Board3 = New-SMBoard -Title 'Crypto informations' -Items @(
     'Refresh'                                  | New-SMBoardItem -Pages {' Page 1'},{'Page 2'},{'Page 3'} 
     'Crypto infos'                             | New-SMBoardItem -Pages {'Board 2'}
-    'Meh'                                      | New-SMBoardItem -Pages {Param($Board3) Invoke-SimpleMenu $Menu;$Board3.PreviousBoard()} 
+    'Meh'                                      | New-SMBoardItem -Pages {Invoke-SMMenu -Menu $Menu; $_.PreviousBoard()} 
 )
 
 
@@ -53,7 +53,7 @@ $Board3 = New-SMBoard -Title 'Crypto informations' -Items @(
 
 Invoke-SMBoard -Board $Board3
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
-#Invoke-SimpleMenu -Menu $Menu -lang fr
+#Invoke-SMMenu -Menu $Menu -lang fr
 
 
 

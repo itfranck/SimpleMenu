@@ -1,12 +1,12 @@
-class SimpleMenuItem {
+class SMMenuItem {
     [ScriptBlock]$Action = $null
     [System.ConsoleColor]$ForegroundColor
     [String]$Id
     $Key = $null
-    [SimpleMenu]$Parent = $null
+    [SMMenu]$Parent = $null
     [Switch]$Pause
     [Switch]$Quit
-    [SimpleMenu]$Submenu
+    [SMMenu]$Submenu
     [String]$Title
     $runtimeKey
 }

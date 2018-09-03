@@ -1,7 +1,7 @@
-function Invoke-SimpleMenu {
+function Invoke-SMMenu {
     [cmdletbinding()]
     param(
-        [ValidateNotNull()][SimpleMenu]$Menu,
+        [ValidateNotNull()][SMMenu]$Menu,
         [Switch]$PassThru,
         [ValidateNotNullOrEmpty()]
         [String]$lang = 'en'
@@ -66,7 +66,7 @@ function Invoke-SimpleMenu {
 
         if ($Result.Submenu -ne $Null) {
             $Result.Submenu.Parent = $Menu
-            Invoke-SimpleMenu $Result.Submenu 
+            Invoke-SMMenu $Result.Submenu 
         }
 
         if ($Result.Quit -eq $true) {

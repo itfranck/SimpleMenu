@@ -1,4 +1,4 @@
-function New-SimpleMenuItem {
+function New-SMMenuItem {
     [cmdletbinding()]
     param(
         [Parameter(Position = 0, ValueFromPipeline = $true)]
@@ -15,7 +15,7 @@ function New-SimpleMenuItem {
 
     )
     Begin {
-        $MenuItem = New-Object -TypeName SimpleMenuItem
+        $MenuItem = New-Object -TypeName SMMenuItem
         
         if ($PSBoundParameters.ContainsKey('ForegroundColor')) {$MenuItem.ForegroundColor = $ForegroundColor }
 
