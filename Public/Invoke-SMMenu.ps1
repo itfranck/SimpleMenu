@@ -26,7 +26,7 @@ function Invoke-SMMenu {
         }
         else {
             [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
-            $Line = $LineRaw.KeyChar.ToString()
+            $Line = $LineRaw.Key
         }
         $Result = @($Menu.Items | Where runtimeKey -eq $Line )
         

@@ -4,7 +4,7 @@ function Invoke-SMBoard {
     Param(
         [ValidateNotNull()][SMBoard]$Board
     )
-$CurrentIndex = 0
+$Board.Index =  $Board.DefaultIndex
 $PageIndex = 0
 $Board.Print()
 

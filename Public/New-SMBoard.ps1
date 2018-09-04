@@ -3,7 +3,8 @@ function New-SMBoard {
     param( 
         $Title,
         [SMBoardItem[]] $Items,
-        [System.ConsoleKey[]]$NavigationKeys
+        [System.ConsoleKey[]]$NavigationKeys,
+        [INT]$DefaultIndex
     )
 
     return New-Object -TypeName SMBoard -Property $PSBoundParameters

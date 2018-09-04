@@ -1,4 +1,4 @@
-class SMMenu {
+﻿class SMMenu {
     [System.Collections.Generic.List[PSObject]]$Items
     [String]$Title
     [ConsoleColor]$TitleForeGround = [ConsoleColor]::Cyan
@@ -27,10 +27,20 @@ class SMMenu {
             }
             else {
                $NumberIndex++
-               $item.runtimeKey = $NumberIndex
+               $item.runtimeKey = [Enum]::Parse([System.ConsoleKey],"D$NumberIndex")
         
             }
-            Write-host "$($item.runtimeKey). $($Item.Title)"
+            $PrintedKey = "[$($item.runtimeKey)]"
+            switch ($item.runtimeKey.value__) {
+                {$_ -in 48..57 -or $_ -in 65..90} {$PrintedKey = ([char]$_) ;break}
+                37 {$PrintedKey = '◀';break}
+                38 {$PrintedKey = '▲';break} 
+                39 {$PrintedKey = '▶';break} 
+                40 {$PrintedKey = '▼';break} 
+            }
+     
+
+            Write-host "$PrintedKey. $($Item.Title)"
         }
 
     }

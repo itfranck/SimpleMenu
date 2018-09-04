@@ -6,7 +6,7 @@ function New-SMMenuItem {
         [String]$Title,
         [System.ConsoleColor]$ForegroundColor,
         $Id, 
-        [ValidatePattern('^[a-zA-Z]$')]$Key = $null,
+        [System.ConsoleKey]$Key,
         [ScriptBlock]$Action = $null,
         [Switch]$Quit,
         [Switch]$Pause,

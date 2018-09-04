@@ -4,6 +4,7 @@
     [psobject[]]$Items
     [String]$Title
     [INT]$Index
+    [INT]$DefaultIndex
 
         
 
@@ -28,7 +29,7 @@
         $Arrow3 = " ($($Arrow31)$($Arrow32))"
     }
 
-    $OutTitle = "{0} $($This.Title){2} {1}" -f $Arrow1,$Arrow2,$Arrow3
+    $OutTitle = "{0} $($This.Title) — $($CurrentItem.Title) {2} {1}" -f $Arrow1,$Arrow2,$Arrow3
     Write-Host $OutTitle  -ForegroundColor Cyan
     Write-host ($this | Invoke-CommandPiped -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) )
     }
