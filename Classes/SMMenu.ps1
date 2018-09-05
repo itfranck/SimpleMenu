@@ -30,17 +30,8 @@
                $item.runtimeKey = [Enum]::Parse([System.ConsoleKey],"D$NumberIndex")
         
             }
-            $PrintedKey = "[$($item.runtimeKey)]"
-            switch ($item.runtimeKey.value__) {
-                {$_ -in 48..57 -or $_ -in 65..90} {$PrintedKey = ([char]$_) ;break}
-                37 {$PrintedKey = '◀';break}
-                38 {$PrintedKey = '▲';break} 
-                39 {$PrintedKey = '▶';break} 
-                40 {$PrintedKey = '▼';break} 
-            }
-     
 
-            Write-host "$PrintedKey. $($Item.Title)"
+            Write-host "$(Get-ConsoleKeyDisplayText $item.runtimeKey). $($Item.Title)"
         }
 
     }
