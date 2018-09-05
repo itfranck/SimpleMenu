@@ -15,16 +15,7 @@ function New-SMMenuItem {
 
     )
     Begin {
-        $MenuItem = New-Object -TypeName SMMenuItem
-        
-        if ($PSBoundParameters.ContainsKey('ForegroundColor')) {$MenuItem.ForegroundColor = $ForegroundColor }
-
-        $MenuItem.Id = $Id
-        $MenuItem.Key = $Key
-        $MenuItem.Action = $Action
-        $MenuItem.Quit = $Quit
-        $MenuItem.Submenu = $Submenu
-
+        $MenuItem = New-Object -TypeName SMMenuItem -Property $PSBoundParameters
     }
     Process {
         
