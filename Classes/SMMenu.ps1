@@ -1,11 +1,13 @@
 ﻿class SMMenu {
     [System.Collections.Generic.List[PSObject]]$Items
+    [System.Collections.Generic.List[PSObject]]$ActionItems
     [String]$Title
     [ConsoleColor]$TitleForeGround = [ConsoleColor]::Cyan
     [SMMenu]$Parent = $null
 
     SMMenu() {
         $This.Items = New-Object System.Collections.Generic.List[PSObject]
+        $This.ActionItems = New-Object System.Collections.Generic.List[PSObject]
     }
 
     [PSObject]GetItem($id) {
@@ -18,8 +20,12 @@
         $TitleParams.Add('ForegroundColor', $this.TitleForeGround)
        
         Write-Host "   $($this.Title)" @TitleParams
-
         $NumberIndex = 0 
+
+        Foreach ($AItem in $this.ActionItems) {
+            $Aitem.runtimeKey = $Aitem.Key
+        }
+
         Foreach ($Item in $this.Items) {
    
             if (-not [String]::IsNullOrWhiteSpace($Item.Key)) {

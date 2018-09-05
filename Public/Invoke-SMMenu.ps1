@@ -29,7 +29,9 @@ function Invoke-SMMenu {
             $Line = $LineRaw.Key
         }
         $Result = @($Menu.Items | Where runtimeKey -eq $Line )
-        
+        if ($Result.Count -eq 0) {
+            $Result = @($Menu.ActionItems | Where runtimeKey -eq $Line)
+        }
 
         if ($Result.Count -gt 0) {
             $Result =$Result |select -First 1

@@ -39,6 +39,8 @@ $Menu = New-SMMenu  -Title 'Service manager' -Items @(
    "Test Error"                                | New-SMMenuItem -Key D   -Action {Throw 'Unmanaged error'} 
    "Options"                                   | New-SMMenuItem -key O -submenu $OptionsMenu
    "Exit"                                      | New-SMMenuItem -Key RightArrow -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
+) -ActionItems @(
+    New-SMMenuItem -Key X -Action {Write-Host 'Boo !' -ForegroundColor Red} -Quit -Pause
 )
 
 
