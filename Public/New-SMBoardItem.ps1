@@ -5,7 +5,7 @@ function New-SMBoardItem {
         [ValidateNotNullorEmpty()] #No value
         [String]$Title,
         [scriptblock[]]$Pages,
-        $key
+        [System.ConsoleKey]$key
     )
 
     $Item = New-Object -TypeName 'SMBoardItem' -Property $PSBoundParameters

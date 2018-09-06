@@ -3,6 +3,7 @@ function New-SMBoard {
     param( 
         $Title,
         [SMBoardItem[]] $Items,
+        [SMBoardItem[]]$ActionItems,
         [System.ConsoleKey[]]$NavigationKeys,
         [INT]$DefaultIndex
     )

@@ -12,11 +12,18 @@ $Board.Print()
     while ($true) {
          [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
             Switch ($LineRaw.Key) {
-                ($Board.Previous) { $Board.PreviousBoard()}
-               ($Board.Next) {$Board.NextBoard()}
-               ([System.ConsoleKey]::UpArrow) {$Board.PreviousPage()}
-               ([System.ConsoleKey]::DownArrow){$Board.NextPage()}
+               ($Board.Previous) { $Board.PreviousBoard();break}
+               ($Board.Next) {$Board.NextBoard();break}
+               ([System.ConsoleKey]::UpArrow) {$Board.PreviousPage();break}
+               ([System.ConsoleKey]::DownArrow){$Board.NextPage();break}
                ([System.ConsoleKey]::Escape) {return}
+               Default {
+                 $Board.CurrentActionBoard = $Board.ActionItems | where Key -eq $LineRaw.Key
+                 if ($Board.CurrentActionBoard -ne $null) {
+                     $Board.Print()
+                     break
+                 }
+               }
             }
     }
 

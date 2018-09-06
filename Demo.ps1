@@ -48,7 +48,9 @@ $Board3 = New-SMBoard -Title 'Crypto informations' -DefaultIndex 1 -Items @(
     'Options'                                  | New-SMBoardItem -Pages {Invoke-SMMenu -Menu $Menu; $_.NextBoard()} 
     'Main board'                               | New-SMBoardItem -Pages {' Page 1'},{'Page 2'},{'Page 3'} 
     'Crypto infos'                             | New-SMBoardItem -Pages {'Board 2'}
-    
+) -ActionItems @(
+    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'},{'page 2'} -key X
+    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'} -key Y
 )
 
 

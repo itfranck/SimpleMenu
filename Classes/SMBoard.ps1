@@ -2,22 +2,31 @@
     [System.ConsoleKey]$Previous = [System.ConsoleKey]::LeftArrow
     [System.ConsoleKey]$Next = [System.ConsoleKey]::RightArrow
     [psobject[]]$Items
+    [psobject[]]$ActionItems
     [String]$Title
     [INT]$Index
     [INT]$DefaultIndex
+    [psobject]$CurrentActionBoard = $null
 
         
+
 
     [Void]Print() {
     #    ▲△▴▵     ▶▷▸▹ ▼▽▾▿ ◀◁◂◃
     Clear-Host
-    $CurrentItem = $this.Items[$this.Index]
+    
+    if ($this.CurrentActionBoard -ne $null) {
+        $CurrentItem = $this.CurrentActionBoard
+    }
+    else {
+        $CurrentItem = $this.Items[$this.Index]
+    }
     
     $Arrow1 = '◁'
     $Arrow2 = '▷'
     $Arrow3 = ''
-    if ($this.Index -gt 0) {$Arrow1 = '◀'}
-    if ($this.Index -lt $this.Items.Count -1) {$Arrow2 = '▶'}
+    if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '◀'}
+    if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '▶'}
     if ($CurrentItem.Pages.Count -gt 1) {
         $Arrow31 = '▼'
         $Arrow32 = '▲'
@@ -35,17 +44,23 @@
     }
 
 [Void]PreviousBoard() {
-    if ($this.Index -gt 0)  {
+    if ($this.CurrentActionBoard -ne $null) {
+        $this.CurrentActionBoard.Index = 0
+        $this.CurrentActionBoard = $null
+        $this.Print()
+    }
+    elseif ($this.Index -gt 0)  {
         $this.Index -=1
         $this.Items[$this.Index].Index = 0
         $this.Print()
     }
+    
 }
 
    
 
     [Void]NextBoard() {
-        if ($this.Index -lt $this.Items.Count -1)  {
+        if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null)  {
             $this.Index +=1
             $this.Items[$this.Index].Index = 0
             $this.Print()
@@ -53,14 +68,20 @@
     }
 
     [Void]PreviousPage() {
-        if ($this.Items[$this.Index].PreviousPage()) {
+        if ($this.CurrentActionBoard -ne $null -and $this.CurrentActionBoard.PreviousPage()) {
+            $this.Print()
+        }
+        elseif ($this.Items[$this.Index].PreviousPage()) {
             $this.Print()
         }
 
     }
 
     [Void]NextPage() {
-        if($this.Items[$this.Index].NextPage()) {
+        if ($this.CurrentActionBoard -ne $null -and $this.CurrentActionBoard.NextPage()) {
+            $this.Print()
+        }
+        elseif($this.Items[$this.Index].NextPage()) {
             $this.Print()
         }
     }
