@@ -1,13 +1,19 @@
 ﻿class SMMenu {
-    [System.Collections.Generic.List[PSObject]]$Items
-    [System.Collections.Generic.List[PSObject]]$ActionItems
+    [PSObject[]]$Items
+    [PSObject[]]$ActionItems
     [String]$Title
-    [ConsoleColor]$TitleForeGround = [ConsoleColor]::Cyan
+    [ConsoleColor]$TitleForegroundColor = [ConsoleColor]::Cyan
     [SMMenu]$Parent = $null
-
+    hidden [System.Collections.ArrayList]$runtimeKeys
+    hidden [int]$runtimeKeyIndex
     SMMenu() {
         $This.Items = New-Object System.Collections.Generic.List[PSObject]
         $This.ActionItems = New-Object System.Collections.Generic.List[PSObject]
+
+        $This.runtimeKeys = New-Object System.Collections.ArrayList
+        $AvailablesChar = @(49..57) + @(48) + @(65..90) | % {[System.ConsoleKey]($_)}
+        $This.runtimeKeys.AddRange($AvailablesChar)
+        
     }
 
     [PSObject]GetItem($id) {
@@ -15,31 +21,32 @@
         return $out
     }
 
+    hidden[void]SetruntimeKeys() {
+        $AvailableKeys = New-Object System.Collections.ArrayList 
+        $AvailableKeys.AddRange($this.runtimeKeys)
+        
+        $AllItems = New-Object 'System.Collections.Generic.List[psobject]'
+        $AllItems.AddRange($this.Items);$AllItems.AddRange($this.ActionItems)
+        $AssignedKeys = $AllItems | Where key -NE $null 
+        $AssignedKeys | % {$AvailableKeys.Remove($_.key);$_.runtimeKey = $_.key}
+
+        $EmptyKeys = $AllItems | Where key -eq $null
+        Foreach ($key in $EmptyKeys ) {
+            $key.runtimeKey = [System.ConsoleKey]($AvailableKeys[$this.runtimeKeyIndex])
+            $this.runtimeKeyIndex++
+        }
+
+        
+    }
+
+    
+
     Print() {
         $TitleParams = @{}
-        $TitleParams.Add('ForegroundColor', $this.TitleForeGround)
+        $TitleParams.Add('ForegroundColor', $this.TitleForegroundColor)
        
         Write-Host "   $($this.Title)" @TitleParams
-        $NumberIndex = 0 
-
-        Foreach ($AItem in $this.ActionItems) {
-            $Aitem.runtimeKey = $Aitem.Key
-        }
-
-        Foreach ($Item in $this.Items) {
-   
-            if (-not [String]::IsNullOrWhiteSpace($Item.Key)) {
-                $item.runtimeKey = $item.Key
-            }
-            else {
-               $NumberIndex++
-               $item.runtimeKey = [Enum]::Parse([System.ConsoleKey],"D$NumberIndex")
-        
-            }
-
-            Write-host "$(Get-ConsoleKeyDisplayText $item.runtimeKey). $($Item.Title)"
-        }
-
+        $this.Items | % {Write-host "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"}
     }
 }
 

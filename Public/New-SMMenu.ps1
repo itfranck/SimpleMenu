@@ -4,46 +4,23 @@ function New-SMMenu {
         [String]$Title,
         [SMMenuItem[]]$Items,
         [SMMenuItem[]]$ActionItems,
-        [ConsoleColor]$TitleForegroundColor,
-        [String]$Id
+        [ConsoleColor]$TitleForegroundColor
     )
-    $Menu = New-Object -TypeName SMMenu
-    $Menu.Title = $Title
-    if ($PSBoundParameters.ContainsKey('TitleForegroundColor')) {
-        $Menu.TitleForeGround = $TitleForegroundColor
-    }
-
+    $Menu = New-Object -TypeName SMMenu -Property $PSBoundParameters
+ 
     $AllKeys = New-Object System.Collections.ArrayList
 
-    Foreach ($AItem in $ActionItems) {
-        if (-not [String]::IsNullOrWhiteSpace($AItem.Key)){
-            if ($AllKeys.Contains($AItem.Key)) {
-                Write-Error $Warning_KeyAlreadyAssigned
-                return $null
-                        }
-                        else {
-                            $AllKeys.Add($AItem.Key) | Out-Null
-                        }
-        }
+    $AllKeys.AddRange(@($Items | where key -NE $null))
+    $AllKeys.AddRange(@($ActionItems | where key -NE $null ))
 
-        $Menu.ActionItems.Add($AItem)
+    
+    $ErrorItem = @($AllKeys | Group-Object -Property key | Where Count -gt 1)
+    if ($ErrorItem -ne $null) {
+        Write-Error ($Messages.Warning_KeyAlreadyAssigned -f $ErrorItem.Name)
     }
 
-
-    Foreach ($Item in $Items) {
-        if (-not [String]::IsNullOrWhiteSpace($item.Key)){
-            if ($AllKeys.Contains($Item.Key)) {
-                Write-Error $Warning_KeyAlreadyAssigned
-                return $null
-                        }
-                        else {
-                            $AllKeys.Add($Item.Key) | Out-Null
-                        }
-        }
-
-        $Menu.Items.Add($Item)
-    }
-
-
+    $AllItems = $Items + $ActionItems 
+    $Menu.SetruntimeKeys()
+    
     return $Menu
 }
