@@ -50,7 +50,7 @@ $Board3 = New-SMBoard -Title 'Crypto informations' -DefaultIndex 1 -Items @(
     'Crypto infos'                             | New-SMBoardItem -Pages {'Board 2'}
 ) -ActionItems @(
     'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'},{'page 2'} -key X
-    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'} -key Y
+    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'} -key y
 )
 
 

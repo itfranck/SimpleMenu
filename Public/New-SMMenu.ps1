@@ -14,9 +14,9 @@ function New-SMMenu {
     $AllKeys.AddRange(@($ActionItems | where key -NE $null ))
 
     
-    $ErrorItem = @($AllKeys | Group-Object -Property key | Where Count -gt 1)
-    if ($ErrorItem -ne $null) {
-        Write-Error ($Messages.Warning_KeyAlreadyAssigned -f $ErrorItem.Name)
+    $Duplicates = @($AllKeys | Group-Object -Property key | Where Count -gt 1)
+    if ($Duplicates -ne $null) {
+        Write-Error ($Messages.Warning_KeyAlreadyAssigned -f $Duplicates[0].Name)
     }
 
     $AllItems = $Items + $ActionItems 
