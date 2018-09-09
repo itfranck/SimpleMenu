@@ -13,6 +13,17 @@ function New-SMMenu {
     $AllKeys.AddRange(@($Items | where key -NE $null))
     $AllKeys.AddRange(@($ActionItems | where key -NE $null ))
 
+    $HasExit = $Items | where Quit -eq $true
+    if ($HasExit -eq $null) {
+        $HasExit = $ActionItems | where Quit -eq $true
+    }
+    if ($HasExit -eq $null) {
+        $Cando = ($AllKeys | where Key -EQ ([System.ConsoleKey]::Escape)) -eq $null
+        if ($Cando) {
+            $Menu.ActionItems += New-SMMenuItem -Key Escape -Quit
+        }
+    }
+    
     
     $Duplicates = @($AllKeys | Group-Object -Property key | Where Count -gt 1)
     if ($Duplicates -ne $null) {
