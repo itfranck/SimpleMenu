@@ -14,7 +14,7 @@
     [Void]Print() {
     #    ▲△▴▵     ▶▷▸▹ ▼▽▾▿ ◀◁◂◃
     Clear-Host
-    
+
     if ($this.CurrentActionBoard -ne $null) {
         $CurrentItem = $this.CurrentActionBoard
     }

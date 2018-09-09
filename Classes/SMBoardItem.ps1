@@ -7,6 +7,7 @@ class SMBoardItem {
     [String]$Title
     [int]$Index
     [psobject]$Menu
+    [Switch]$Quit
 
     
     [Bool]PreviousPage() {

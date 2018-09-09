@@ -9,6 +9,7 @@ class SMMenuItem {
     [SMMenu]$Submenu
     [String]$Title
     $runtimeKey
+    [Switch]$Detailed
 }
 
 

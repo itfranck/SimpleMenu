@@ -10,7 +10,8 @@ function New-SMMenuItem {
         [ScriptBlock]$Action = $null,
         [Switch]$Quit,
         [Switch]$Pause,
-        [psobject]$Submenu
+        [psobject]$Submenu,
+        [Switch]$Detailed
     
 
     )

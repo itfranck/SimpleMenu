@@ -6,7 +6,8 @@
         [String]$Title,
         [scriptblock[]]$Pages,
         [System.ConsoleKey]$key,
-        [SMMenu]$Menu
+        [SMMenu]$Menu,
+        [Switch]$Quit
     )
 
      $Item = New-Object -TypeName 'SMBoardItem' -Property $PSBoundParameters

@@ -42,7 +42,19 @@ function Invoke-SMMenu {
             if ($Result.Action -ne $null) {
                 try {
                     # Need to recreate the received scriptblock otherwise the $_ variable does not work :(
-                    $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action)))
+                    if ($Result.Detailed) {
+                        $BoardItem = New-SMBoardItem -Title $Result.Title -Pages $Result.Action -Quit
+                        $Board = New-SMBoard  -Title $Menu  -ActionItems $BoardItem 
+                        $Board.CurrentActionBoard = $BoardItem 
+                        Invoke-SMBoard $Board 
+                        Clear-Host
+                        $Menu.Print()
+                    }
+                    else {
+                        $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action)))
+                    }
+
+                    
                 }
                 catch {
                     Write-Error $_
