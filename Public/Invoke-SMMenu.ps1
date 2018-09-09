@@ -42,7 +42,6 @@ function Invoke-SMMenu {
             if ($Result.Action -ne $null) {
                 try {
                     # Need to recreate the received scriptblock otherwise the $_ variable does not work :(
-                    $CurrentTitle = $Result.Title
                     $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action)))
                 }
                 catch {
