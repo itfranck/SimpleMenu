@@ -27,6 +27,37 @@
     $Arrow3 = ''
     if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '◀'}
     if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '▶'}
+
+
+    if ($CurrentItem.menu -ne $null) {
+        $OutTitle = "{0} $($This.Title) — $($CurrentItem.Title) {2} {1}" -f $Arrow1,$Arrow2,$Arrow3
+        $inIndent =   $CurrentItem.Menu.TitleIndent
+        $inActionItems = $CurrentItem.Menu.ActionItems
+        $InTitle = $CurrentItem.Menu.Title
+        $CurrentItem.Menu.TitleIndent = ''
+        $CurrentItem.Menu.Title = $OutTitle
+        $QuitAction = New-SMMenuItem -Key LeftArrow -Quit ; $QuitAction.RuntimeKey = [System.ConsoleKey]::LeftArrow
+        $QuitAction1 = New-SMMenuItem -Key RightArrow -Quit ; $QuitAction1.RuntimeKey = [System.ConsoleKey]::RightArrow
+
+        if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$CurrentItem.Menu.ActionItems+= $QuitAction}
+        if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$CurrentItem.Menu.ActionItems+= $QuitAction1}
+
+        
+                      
+        
+
+        Invoke-SMMenu $CurrentItem.Menu
+        $CurrentItem.menu.Title = $InTitle
+        $CurrentItem.Menu.TitleIndent = $inIndent
+        $CurrentItem.Menu.ActionItems = $inActionItems
+        switch ($CurrentItem.Menu.QuitKey) {
+            LeftArrow {$this.PreviousBoard() }
+            RightArrow {$this.NextBoard()}
+        }
+        return
+    }
+
+
     if ($CurrentItem.Pages.Count -gt 1) {
         $Arrow31 = '▼'
         $Arrow32 = '▲'

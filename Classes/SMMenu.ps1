@@ -6,6 +6,8 @@
     [SMMenu]$Parent = $null
     hidden [System.Collections.ArrayList]$runtimeKeys
     hidden [int]$runtimeKeyIndex
+    hidden [String] $TitleIndent = '   '
+    hidden [ConsoleKey]$QuitKey
     SMMenu() {
         $This.Items = New-Object System.Collections.Generic.List[PSObject]
         $This.ActionItems = New-Object System.Collections.Generic.List[PSObject]
@@ -45,7 +47,7 @@
         $TitleParams = @{}
         $TitleParams.Add('ForegroundColor', $this.TitleForegroundColor)
        
-        Write-Host "   $($this.Title)" @TitleParams
+        Write-Host "$($this.TitleIndent)$($this.Title)" @TitleParams
         $this.Items | % {Write-host "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"}
     }
 }

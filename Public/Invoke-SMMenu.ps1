@@ -5,7 +5,6 @@ function Invoke-SMMenu {
         [Switch]$PassThru,
         [ValidateNotNullOrEmpty()]
         [String]$lang = 'en'
-
     )
 
     if ($lang -ne 'en') {
@@ -76,6 +75,7 @@ function Invoke-SMMenu {
                 if (-not   $Debug ){Clear-Host}
                 $Menu.Parent.Print()
             }
+            $Menu.QuitKey = $LineRaw.Key
             return
         }
 

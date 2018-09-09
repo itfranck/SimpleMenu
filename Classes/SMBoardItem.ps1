@@ -6,6 +6,7 @@ class SMBoardItem {
     [int]$CurrentIndex
     [String]$Title
     [int]$Index
+    [psobject]$Menu
 
     
     [Bool]PreviousPage() {
