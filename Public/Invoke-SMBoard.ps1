@@ -8,6 +8,7 @@ $Board.Index =  $Board.DefaultIndex
 $PageIndex = 0
 $Board.Print()
 
+while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
 
     while ($true) {
          [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
