@@ -48,7 +48,15 @@
         $TitleParams.Add('ForegroundColor', $this.TitleForegroundColor)
        
         Write-Host "$($this.TitleIndent)$($this.Title)" @TitleParams
-        $this.Items | % {Write-host "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"}
+        
+        $this.Items | % { 
+            $ItemTitle =  "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"
+            if ($_.Disabled) {
+                Write-Host $ItemTitle -ForegroundColor DarkGray
+            } else {
+                Write-Host $ItemTitle
+            }
+         }
     }
 }
 

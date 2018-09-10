@@ -10,6 +10,7 @@ class SMMenuItem {
     [String]$Title
     $runtimeKey
     [Switch]$Detailed
+    [Switch]$Disabled
 }
 
 

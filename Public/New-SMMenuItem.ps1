@@ -11,7 +11,8 @@ function New-SMMenuItem {
         [Switch]$Quit,
         [Switch]$Pause,
         [psobject]$Submenu,
-        [Switch]$Detailed
+        [Switch]$Detailed,
+        [Switch]$Disabled
     
 
     )

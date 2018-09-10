@@ -27,9 +27,9 @@ function Invoke-SMMenu {
             [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
             $Line = $LineRaw.Key
         }
-        $Result = @($Menu.Items | Where runtimeKey -eq $Line )
+        $Result = @($Menu.Items | Where {$_.runtimeKey -eq $Line -and -not $_.Disabled } )
         if ($Result.Count -eq 0) {
-            $Result = @($Menu.ActionItems | Where runtimeKey -eq $Line)
+            $Result = @($Menu.ActionItems | Where {$_.runtimeKey -eq $Line -and -not $_.Disabled })
         }
 
         if ($Result.Count -gt 0) {
