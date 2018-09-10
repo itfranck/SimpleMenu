@@ -102,7 +102,7 @@
         if ($this.CurrentActionBoard -ne $null -and $this.CurrentActionBoard.PreviousPage()) {
             $this.Print()
         }
-        elseif ($this.Items[$this.Index].PreviousPage()) {
+        elseif ($this.Items -ne $null -and $this.Items[$this.Index].PreviousPage()) {
             $this.Print()
         }
 
@@ -112,7 +112,7 @@
         if ($this.CurrentActionBoard -ne $null -and $this.CurrentActionBoard.NextPage()) {
             $this.Print()
         }
-        elseif($this.Items[$this.Index].NextPage()) {
+        elseif($this.items -ne $null -and  $this.Items[$this.Index].NextPage()) {
             $this.Print()
         }
     }
