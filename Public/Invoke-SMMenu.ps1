@@ -2,14 +2,8 @@ function Invoke-SMMenu {
     [cmdletbinding()]
     param(
         [ValidateNotNull()][SMMenu]$Menu,
-        [Switch]$PassThru,
-        [ValidateNotNullOrEmpty()]
-        [String]$lang = 'en'
+        [Switch]$PassThru
     )
-
-    if ($lang -ne 'en') {
-        init -lang $Lang
-    }
 
     if ($PassThru) {$Menu.Print(); return}
     $Debug = ($psboundparameters.debug.ispresent -eq $true)
