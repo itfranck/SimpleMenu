@@ -4,7 +4,6 @@ function New-SMBoard {
         $Title,
         [SMBoardItem[]] $Items,
         [SMBoardItem[]]$ActionItems,
-        [System.ConsoleKey[]]$NavigationKeys,
         [INT]$DefaultIndex
     )
 
