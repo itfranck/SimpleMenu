@@ -54,7 +54,7 @@ That way, the declaration looks very similar to the actual menu that will be dis
 ## PARAMETERS
 
 ### -ActionItems
-{{Fill ActionItems Description}}
+Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.
 
 ```yaml
 Type: SMMenuItem[]

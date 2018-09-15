@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-SMBoard
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Invoke SMBoard to display informations in a convenient manner.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Invoke-SMBoard [[-Board] <SMBoard>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Invoke SMBoard to display informations in a convenient manner.
 
 ## EXAMPLES
 
@@ -31,7 +31,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -Board
-{{Fill Board Description}}
+SMBoard to be invoked.
 
 ```yaml
 Type: SMBoard

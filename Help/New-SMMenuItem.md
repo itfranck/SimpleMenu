@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -Detailed
-{{Fill Detailed Description}}
+Use a SMBoardItem to display the result. Perfect when you have more than a few lines to display. The back navigation arrow will also shows and send the user back to the menu.
 
 ```yaml
 Type: SwitchParameter
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disabled
-{{Fill Disabled Description}}
+Set the menu item to disabled. A menu item can also be disabled/enabled if $_.Disabled = $true or $false is set in the action block of that same item.
 
 ```yaml
 Type: SwitchParameter
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pause
-{{Fill Pause Description}}
+Pause after invoking action (Default:False)
 
 ```yaml
 Type: SwitchParameter

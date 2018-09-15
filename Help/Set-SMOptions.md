@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-SMOptions
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Set SimpleMenu module options. 
 
 ## SYNTAX
 
@@ -17,21 +17,21 @@ Set-SMOptions [[-Language] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Set SimpleMenu module options. Currently only used to switch language.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1 - Switch language to french
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-SMOptions -Language fr
 ```
 
-{{ Add example description here }}
+This example will set the language of the hardcoded elements to french. 
 
 ## PARAMETERS
 
 ### -Language
-{{Fill Language Description}}
+Language of the hard coded elements (en/fr)
 
 ```yaml
 Type: Object

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-SMBoardItem
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Create a new SmBoardItem.
 
 ## SYNTAX
 
@@ -18,21 +18,21 @@ New-SMBoardItem [[-Title] <String>] [-Pages <ScriptBlock[]>] [-key <ConsoleKey>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Create a new SMBoardItem. Items can have multiple pages and navigation is automatically handled by the SMBoard hosting them.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> 'Main board'                               | New-SMBoardItem -Pages {'Lorem Ipsum'},{'Content of a second page here'},{Display-CustomPage}
 ```
 
-{{ Add example description here }}
+This example create a new SMBoardItem that contains 3 pages. Pages scriptblock should display informations otherwise the console screen will be empty. 
 
 ## PARAMETERS
 
 ### -Menu
-{{Fill Menu Description}}
+Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.
 
 ```yaml
 Type: SMMenu
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pages
-{{Fill Pages Description}}
+Scriptblock producing a number of informations (string) to be displayed. As soon as multiple pages are used, an up/down arrow will be shown.
 
 ```yaml
 Type: ScriptBlock[]
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Quit
-{{Fill Quit Description}}
+Item is used to exit the SMBoard. This will exit the module script. Makes most sense used to define an exit key in the ActionItems
 
 ```yaml
 Type: SwitchParameter
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{Fill Title Description}}
+Title of the board item. It will be displayed when navigated to.
 
 ```yaml
 Type: String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -key
-{{Fill key Description}}
+Key to trigger that item. If the SMBoardItem is a regular item, it will be available with the navigation keys but the key parameter could allows to return to it using that method too. Otherwise, it is mostly intended for the Action Items, which are unavailable otherwise.
 
 ```yaml
 Type: ConsoleKey

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-SMBoard
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Create a new SMBoard to display informations in an organized method.
 
 ## SYNTAX
 
@@ -18,7 +18,8 @@ New-SMBoard [[-Title] <Object>] [[-Items] <SMBoardItem[]>] [[-ActionItems] <SMBo
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Create a new SMBoard to display informations in an organized method.
+The SMBoard provides navigation keys for multiple items and allows the creation of a UI providing a convenient way to show informations and also provides interaction through the navigation keys, action items and integrate with SMMenu to allow even more interaction.
 
 ## EXAMPLES
 
@@ -32,7 +33,7 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -ActionItems
-{{Fill ActionItems Description}}
+Action Items are not available through the arrow navigation and need to be accessed using the defined key. 
 
 ```yaml
 Type: SMBoardItem[]
@@ -47,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultIndex
-{{Fill DefaultIndex Description}}
+DefaultIndex can be used to set the initial board item to be displayed not the first one. 
 
 ```yaml
 Type: Int32
@@ -62,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Items
-{{Fill Items Description}}
+Board Items to be dispayed. They can be navigated from and to using navigation keys 
 
 ```yaml
 Type: SMBoardItem[]
@@ -93,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Title
-{{Fill Title Description}}
+Title of the board.
 
 ```yaml
 Type: Object

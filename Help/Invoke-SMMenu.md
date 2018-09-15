@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{Fill PassThru Description}}
+Print the mene then exit. 
 
 ```yaml
 Type: SwitchParameter

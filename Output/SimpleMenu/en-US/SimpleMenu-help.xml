@@ -6,11 +6,11 @@
       <command:verb>Invoke</command:verb>
       <command:noun>SMBoard</command:noun>
       <maml:description>
-        <maml:para>{{Fill in the Synopsis}}</maml:para>
+        <maml:para>Invoke SMBoard to display informations in a convenient manner.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>Invoke SMBoard to display informations in a convenient manner.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -18,7 +18,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Board</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Board Description}}</maml:para>
+            <maml:para>SMBoard to be invoked.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
           <dev:type>
@@ -33,7 +33,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Board</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Board Description}}</maml:para>
+          <maml:para>SMBoard to be invoked.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
         <dev:type>
@@ -109,7 +109,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
           <maml:Description>
-            <maml:para>{{Fill PassThru Description}}</maml:para>
+            <maml:para>Print the mene then exit.</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -135,7 +135,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>PassThru</maml:name>
         <maml:Description>
-          <maml:para>{{Fill PassThru Description}}</maml:para>
+          <maml:para>Print the mene then exit.</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -178,11 +178,11 @@
       <command:verb>New</command:verb>
       <command:noun>SMBoard</command:noun>
       <maml:description>
-        <maml:para>{{Fill in the Synopsis}}</maml:para>
+        <maml:para>Create a new SMBoard to display informations in an organized method.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>Create a new SMBoard to display informations in an organized method. The SMBoard provides navigation keys for multiple items and allows the creation of a UI providing a convenient way to show informations and also provides interaction through the navigation keys, action items and integrate with SMMenu to allow even more interaction.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -190,7 +190,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Title</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Title Description}}</maml:para>
+            <maml:para>Title of the board.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -202,7 +202,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Items</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Items Description}}</maml:para>
+            <maml:para>Board Items to be dispayed. They can be navigated from and to using navigation keys</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
           <dev:type>
@@ -214,7 +214,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>ActionItems</maml:name>
           <maml:Description>
-            <maml:para>{{Fill ActionItems Description}}</maml:para>
+            <maml:para>Action Items are not available through the arrow navigation and need to be accessed using the defined key.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
           <dev:type>
@@ -384,7 +384,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
           <maml:name>DefaultIndex</maml:name>
           <maml:Description>
-            <maml:para>{{Fill DefaultIndex Description}}</maml:para>
+            <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
@@ -399,7 +399,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>ActionItems</maml:name>
         <maml:Description>
-          <maml:para>{{Fill ActionItems Description}}</maml:para>
+          <maml:para>Action Items are not available through the arrow navigation and need to be accessed using the defined key.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
         <dev:type>
@@ -411,7 +411,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
         <maml:name>DefaultIndex</maml:name>
         <maml:Description>
-          <maml:para>{{Fill DefaultIndex Description}}</maml:para>
+          <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
@@ -423,7 +423,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Items</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Items Description}}</maml:para>
+          <maml:para>Board Items to be dispayed. They can be navigated from and to using navigation keys</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
         <dev:type>
@@ -447,7 +447,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Title</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Title Description}}</maml:para>
+          <maml:para>Title of the board.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -499,11 +499,11 @@
       <command:verb>New</command:verb>
       <command:noun>SMBoardItem</command:noun>
       <maml:description>
-        <maml:para>{{Fill in the Synopsis}}</maml:para>
+        <maml:para>Create a new SmBoardItem.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>Create a new SMBoardItem. Items can have multiple pages and navigation is automatically handled by the SMBoard hosting them.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -511,7 +511,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Title</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Title Description}}</maml:para>
+            <maml:para>Title of the board item. It will be displayed when navigated to.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
@@ -523,7 +523,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Menu</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Menu Description}}</maml:para>
+            <maml:para>Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
           <dev:type>
@@ -535,7 +535,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Pages</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Pages Description}}</maml:para>
+            <maml:para>Scriptblock producing a number of informations (string) to be displayed. As soon as multiple pages are used, an up/down arrow will be shown.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
           <dev:type>
@@ -547,7 +547,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Quit</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Quit Description}}</maml:para>
+            <maml:para>Item is used to exit the SMBoard. This will exit the module script. Makes most sense used to define an exit key in the ActionItems</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -558,7 +558,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>key</maml:name>
           <maml:Description>
-            <maml:para>{{Fill key Description}}</maml:para>
+            <maml:para>Key to trigger that item. If the SMBoardItem is a regular item, it will be available with the navigation keys but the key parameter could allows to return to it using that method too. Otherwise, it is mostly intended for the Action Items, which are unavailable otherwise.</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
@@ -719,7 +719,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Menu</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Menu Description}}</maml:para>
+          <maml:para>Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
         <dev:type>
@@ -731,7 +731,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Pages</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Pages Description}}</maml:para>
+          <maml:para>Scriptblock producing a number of informations (string) to be displayed. As soon as multiple pages are used, an up/down arrow will be shown.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
         <dev:type>
@@ -743,7 +743,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Quit</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Quit Description}}</maml:para>
+          <maml:para>Item is used to exit the SMBoard. This will exit the module script. Makes most sense used to define an exit key in the ActionItems</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -755,7 +755,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>Title</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Title Description}}</maml:para>
+          <maml:para>Title of the board item. It will be displayed when navigated to.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
@@ -767,7 +767,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>key</maml:name>
         <maml:Description>
-          <maml:para>{{Fill key Description}}</maml:para>
+          <maml:para>Key to trigger that item. If the SMBoardItem is a regular item, it will be available with the navigation keys but the key parameter could allows to return to it using that method too. Otherwise, it is mostly intended for the Action Items, which are unavailable otherwise.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
         <dev:type>
@@ -805,9 +805,9 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; 'Main board'                               | New-SMBoardItem -Pages {'Lorem Ipsum'},{'Content of a second page here'},{Display-CustomPage}</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This example create a new SMBoardItem that contains 3 pages. Pages scriptblock should display informations otherwise the console screen will be empty.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -855,7 +855,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>ActionItems</maml:name>
           <maml:Description>
-            <maml:para>{{Fill ActionItems Description}}</maml:para>
+            <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
           <dev:type>
@@ -900,7 +900,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>ActionItems</maml:name>
         <maml:Description>
-          <maml:para>{{Fill ActionItems Description}}</maml:para>
+          <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
         <dev:type>
@@ -1031,7 +1031,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Detailed</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Detailed Description}}</maml:para>
+            <maml:para>Use a SMBoardItem to display the result. Perfect when you have more than a few lines to display. The back navigation arrow will also shows and send the user back to the menu.</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -1042,7 +1042,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Disabled</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Disabled Description}}</maml:para>
+            <maml:para>Set the menu item to disabled. A menu item can also be disabled/enabled if $_.Disabled = $true or $false is set in the action block of that same item.</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -1253,7 +1253,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Pause</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Pause Description}}</maml:para>
+            <maml:para>Pause after invoking action (Default:False)</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -1302,7 +1302,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Detailed</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Detailed Description}}</maml:para>
+          <maml:para>Use a SMBoardItem to display the result. Perfect when you have more than a few lines to display. The back navigation arrow will also shows and send the user back to the menu.</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -1314,7 +1314,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Disabled</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Disabled Description}}</maml:para>
+          <maml:para>Set the menu item to disabled. A menu item can also be disabled/enabled if $_.Disabled = $true or $false is set in the action block of that same item.</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -1362,7 +1362,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Pause</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Pause Description}}</maml:para>
+          <maml:para>Pause after invoking action (Default:False)</maml:para>
         </maml:Description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -1432,11 +1432,11 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       <command:verb>Set</command:verb>
       <command:noun>SMOptions</command:noun>
       <maml:description>
-        <maml:para>{{Fill in the Synopsis}}</maml:para>
+        <maml:para>Set SimpleMenu module options.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>Set SimpleMenu module options. Currently only used to switch language.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1444,7 +1444,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Language</maml:name>
           <maml:Description>
-            <maml:para>{{Fill Language Description}}</maml:para>
+            <maml:para>Language of the hard coded elements (en/fr)</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -1459,7 +1459,7 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Language</maml:name>
         <maml:Description>
-          <maml:para>{{Fill Language Description}}</maml:para>
+          <maml:para>Language of the hard coded elements (en/fr)</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -1496,10 +1496,10 @@ Invoke-SMMenu -Menu $Menu</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <maml:title>------------ Example 1 - Switch language to french ------------</maml:title>
+        <dev:code>PS C:\&gt; Set-SMOptions -Language fr</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This example will set the language of the hardcoded elements to french.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
