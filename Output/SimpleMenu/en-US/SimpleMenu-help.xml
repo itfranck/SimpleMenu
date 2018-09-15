@@ -224,164 +224,6 @@
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
-          <maml:name>NavigationKeys</maml:name>
-          <maml:Description>
-            <maml:para>{{Fill NavigationKeys Description}}</maml:para>
-          </maml:Description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Clear</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Enter</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Pause</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Escape</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Spacebar</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">PageUp</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">PageDown</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">End</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Home</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LeftArrow</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">UpArrow</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">RightArrow</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">DownArrow</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Select</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Print</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Execute</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">PrintScreen</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Insert</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Help</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D0</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D2</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D3</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D4</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D5</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D6</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D7</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D8</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D9</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">B</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">C</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">D</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">E</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">G</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">H</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">I</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">J</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">K</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">L</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">M</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">N</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">O</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">P</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Q</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">R</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">S</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">T</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">U</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">V</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">W</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">X</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Y</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Z</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LeftWindows</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">RightWindows</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Applications</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Sleep</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad0</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad2</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad3</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad4</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad5</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad6</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad7</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad8</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NumPad9</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Multiply</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Add</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Separator</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Subtract</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Decimal</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Divide</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F2</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F3</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F4</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F5</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F6</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F7</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F8</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F9</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F10</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F11</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F12</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F13</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F14</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F15</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F16</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F17</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F18</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F19</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F20</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F21</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F22</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F23</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">F24</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserBack</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserForward</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserRefresh</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserStop</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserSearch</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserFavorites</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">BrowserHome</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">VolumeMute</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">VolumeDown</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">VolumeUp</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">MediaNext</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">MediaPrevious</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">MediaStop</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">MediaPlay</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LaunchMail</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LaunchMediaSelect</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LaunchApp1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">LaunchApp2</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OemPlus</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OemComma</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OemMinus</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OemPeriod</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem2</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem3</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem4</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem5</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem6</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem7</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem8</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Oem102</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Packet</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Attention</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">CrSel</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">ExSel</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">EraseEndOfFile</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Play</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Zoom</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">NoName</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Pa1</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OemClear</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">ConsoleKey[]</command:parameterValue>
-          <dev:type>
-            <maml:name>ConsoleKey[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
           <maml:name>DefaultIndex</maml:name>
           <maml:Description>
             <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
@@ -408,7 +250,7 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>DefaultIndex</maml:name>
         <maml:Description>
           <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
@@ -428,18 +270,6 @@
         <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
         <dev:type>
           <maml:name>SMBoardItem[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
-        <maml:name>NavigationKeys</maml:name>
-        <maml:Description>
-          <maml:para>{{Fill NavigationKeys Description}}</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">ConsoleKey[]</command:parameterValue>
-        <dev:type>
-          <maml:name>ConsoleKey[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
