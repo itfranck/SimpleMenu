@@ -90,7 +90,7 @@ function Invoke-SMMenu {
             Switch($InvalidChoice) {
                 ([WarningMessages]::NoActionDefined) {  Write-Warning $Messages.Warning_NoActions}
                 ([WarningMessages]::InvalidChoice) {
-                    Write-Warning ($Messages.Warning_InvalidChoice -f $Line)
+                    Write-Warning ($Messages.Warning_InvalidChoice -f (Get-ConsolekeyDisplayText $Line))
                     $IDs = ($menu.Items.runtimeKey | % {Get-ConsolekeyDisplayText $_}) -join ','
                     Write-Host ($Messages.info_validChoices -f $IDs)
                 }
