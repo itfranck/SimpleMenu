@@ -69,7 +69,7 @@ Description = 'Create and invoke a simple menu interface.'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Invoke-SimpleMenu', 'New-SimpleMenu', 'New-SimpleMenuItem')
+FunctionsToExport = @('Invoke-SMBoard', 'Invoke-SMMenu', 'New-SMBoard', 'New-SMBoardItem', 'New-SMMenu', 'New-SMMenuItem', 'Set-SMOptions')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'

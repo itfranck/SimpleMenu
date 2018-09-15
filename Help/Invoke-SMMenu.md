@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Invoke-SimpleMenu
+# Invoke-SMMenu
 
 ## SYNOPSIS
 Calls menu interface.
@@ -13,7 +13,7 @@ Calls menu interface.
 ## SYNTAX
 
 ```
-Invoke-SimpleMenu [[-Menu] <SimpleMenu>] [<CommonParameters>]
+Invoke-SMMenu [[-Menu] <SMMenu>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,12 +35,27 @@ PS C:\> {{ Add example code here }}
 Menu to be invoked.
 
 ```yaml
-Type: SimpleMenu
+Type: SMMenu
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+{{Fill PassThru Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

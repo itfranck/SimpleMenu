@@ -2,9 +2,88 @@
 <helpItems schema="maml" xmlns="http://msh">
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Invoke-SimpleMenu</command:name>
+      <command:name>Invoke-SMBoard</command:name>
       <command:verb>Invoke</command:verb>
-      <command:noun>SimpleMenu</command:noun>
+      <command:noun>SMBoard</command:noun>
+      <maml:description>
+        <maml:para>{{Fill in the Synopsis}}</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>{{Fill in the Description}}</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-SMBoard</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Board</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Board Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
+          <dev:type>
+            <maml:name>SMBoard</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Board</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Board Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
+        <dev:type>
+          <maml:name>SMBoard</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:remarks>
+          <maml:para>{{ Add example description here }}</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-SMMenu</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>SMMenu</command:noun>
       <maml:description>
         <maml:para>Calls menu interface.</maml:para>
       </maml:description>
@@ -14,18 +93,29 @@
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Invoke-SimpleMenu</maml:name>
+        <maml:name>Invoke-SMMenu</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Menu</maml:name>
           <maml:Description>
             <maml:para>Menu to be invoked.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">SimpleMenu</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
           <dev:type>
-            <maml:name>SimpleMenu</maml:name>
+            <maml:name>SMMenu</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill PassThru Description}}</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -35,12 +125,24 @@
         <maml:Description>
           <maml:para>Menu to be invoked.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">SimpleMenu</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
         <dev:type>
-          <maml:name>SimpleMenu</maml:name>
+          <maml:name>SMMenu</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill PassThru Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes />
@@ -72,23 +174,23 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-SimpleMenu</command:name>
+      <command:name>New-SMBoard</command:name>
       <command:verb>New</command:verb>
-      <command:noun>SimpleMenu</command:noun>
+      <command:noun>SMBoard</command:noun>
       <maml:description>
-        <maml:para>Create SimpleMenu interface.</maml:para>
+        <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Create SimpleMenu Interface and defines menu item. Submenus should be created prior to their parent menu to allow adding them when creating the latter.</maml:para>
+      <maml:para>{{Fill in the Description}}</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-SimpleMenu</maml:name>
+        <maml:name>New-SMBoard</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Title</maml:name>
           <maml:Description>
-            <maml:para>Defines menu title.</maml:para>
+            <maml:para>{{Fill Title Description}}</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -100,16 +202,669 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Items</maml:name>
           <maml:Description>
-            <maml:para>Array of SimpleMenuItem that should be created using the New-SimpleMenuItem cmdlet.</maml:para>
+            <maml:para>{{Fill Items Description}}</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
           <dev:type>
-            <maml:name>Object</maml:name>
+            <maml:name>SMBoardItem[]</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>ActionItems</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill ActionItems Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
+          <dev:type>
+            <maml:name>SMBoardItem[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>NavigationKeys</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill NavigationKeys Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Clear</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pause</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Escape</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Spacebar</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">End</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Home</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UpArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DownArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Select</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Print</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Execute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PrintScreen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Insert</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Help</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">B</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">C</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">E</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">G</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">H</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">I</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">J</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">K</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">L</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">M</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">N</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">O</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">P</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Q</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">R</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">S</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">T</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">U</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">V</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">W</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Y</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Z</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Applications</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sleep</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Multiply</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Add</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Separator</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Subtract</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Decimal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Divide</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F10</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F11</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F12</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F13</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F14</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F15</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F16</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F17</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F18</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F19</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F20</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F21</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F22</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F23</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F24</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserBack</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserForward</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserRefresh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserSearch</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserFavorites</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserHome</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeMute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaNext</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPrevious</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPlay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMail</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMediaSelect</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPlus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemComma</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemMinus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPeriod</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem102</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Packet</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Attention</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CrSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ExSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">EraseEndOfFile</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Play</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Zoom</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NoName</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pa1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemClear</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ConsoleKey[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ConsoleKey[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+          <maml:name>DefaultIndex</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill DefaultIndex Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>ActionItems</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill ActionItems Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
+        <dev:type>
+          <maml:name>SMBoardItem[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+        <maml:name>DefaultIndex</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill DefaultIndex Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Items</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Items Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
+        <dev:type>
+          <maml:name>SMBoardItem[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>NavigationKeys</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill NavigationKeys Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ConsoleKey[]</command:parameterValue>
+        <dev:type>
+          <maml:name>ConsoleKey[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Title</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Title Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:remarks>
+          <maml:para>{{ Add example description here }}</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-SMBoardItem</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>SMBoardItem</command:noun>
+      <maml:description>
+        <maml:para>{{Fill in the Synopsis}}</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>{{Fill in the Description}}</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-SMBoardItem</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+          <maml:name>Title</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Title Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Menu</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Menu Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
+          <dev:type>
+            <maml:name>SMMenu</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Pages</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Pages Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Quit</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Quit Description}}</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>key</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill key Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Clear</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pause</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Escape</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Spacebar</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">End</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Home</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UpArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DownArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Select</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Print</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Execute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PrintScreen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Insert</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Help</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">B</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">C</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">E</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">G</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">H</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">I</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">J</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">K</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">L</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">M</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">N</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">O</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">P</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Q</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">R</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">S</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">T</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">U</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">V</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">W</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Y</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Z</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Applications</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sleep</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Multiply</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Add</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Separator</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Subtract</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Decimal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Divide</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F10</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F11</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F12</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F13</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F14</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F15</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F16</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F17</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F18</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F19</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F20</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F21</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F22</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F23</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F24</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserBack</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserForward</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserRefresh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserSearch</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserFavorites</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserHome</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeMute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaNext</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPrevious</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPlay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMail</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMediaSelect</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPlus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemComma</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemMinus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPeriod</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem102</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Packet</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Attention</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CrSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ExSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">EraseEndOfFile</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Play</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Zoom</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NoName</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pa1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemClear</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
+          <dev:type>
+            <maml:name>ConsoleKey</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Menu</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Menu Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
+        <dev:type>
+          <maml:name>SMMenu</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Pages</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Pages Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Quit</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Quit Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <maml:name>Title</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Title Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>key</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill key Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
+        <dev:type>
+          <maml:name>ConsoleKey</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:remarks>
+          <maml:para>{{ Add example description here }}</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-SMMenu</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>SMMenu</command:noun>
+      <maml:description>
+        <maml:para>Create SimpleMenu interface.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Create SimpleMenu Interface and defines menu item. Submenus should be created prior to their parent menu to allow adding them when creating the latter.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-SMMenu</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Title</maml:name>
+          <maml:Description>
+            <maml:para>Defines menu title.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Items</maml:name>
+          <maml:Description>
+            <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+          <dev:type>
+            <maml:name>SMMenuItem[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>ActionItems</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill ActionItems Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+          <dev:type>
+            <maml:name>SMMenuItem[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>TitleForegroundColor</maml:name>
           <maml:Description>
             <maml:para>Foreground color of the menu title.</maml:para>
@@ -139,29 +894,17 @@
           </dev:type>
           <dev:defaultValue>Cyan</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
-          <maml:name>Id</maml:name>
-          <maml:Description>
-            <maml:para>ID of the menu. Currently unusedé</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
-        <maml:name>Id</maml:name>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>ActionItems</maml:name>
         <maml:Description>
-          <maml:para>ID of the menu. Currently unusedé</maml:para>
+          <maml:para>{{Fill ActionItems Description}}</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
         <dev:type>
-          <maml:name>Object</maml:name>
+          <maml:name>SMMenuItem[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -169,11 +912,11 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Items</maml:name>
         <maml:Description>
-          <maml:para>Array of SimpleMenuItem that should be created using the New-SimpleMenuItem cmdlet.</maml:para>
+          <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
         <dev:type>
-          <maml:name>Object</maml:name>
+          <maml:name>SMMenuItem[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -183,14 +926,14 @@
         <maml:Description>
           <maml:para>Defines menu title.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
-          <maml:name>Object</maml:name>
+          <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>TitleForegroundColor</maml:name>
         <maml:Description>
           <maml:para>Foreground color of the menu title.</maml:para>
@@ -222,23 +965,23 @@
     <command:examples>
       <command:example>
         <maml:title>------------------ Complete menu with submenu ------------------</maml:title>
-        <dev:code>$OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
-    "Enter Powershell prompt"                   | New-SimpleMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
-    "Edit this menu"                            | New-SimpleMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
-    "Display script full path"                  | New-SimpleMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
-    "Back"                                      | New-SimpleMenuItem -Key b -Quit
+        <dev:code>$OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
+    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
+    "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
+    "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
+    "Back"                                      | New-SMMenuItem -Key b -Quit
 )
 
 
-$Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
-    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
-    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService}
-    "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
-    "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
-    "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
+$Menu = New-SMMenu  -Title 'Service manager'   -Items @(
+    "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
+    "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService}
+    "Options"                                   | New-SMMenuItem -key 'O' -submenu $OptionsMenu
+    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
+    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
 )
 
-Invoke-SimpleMenu -Menu $Menu</dev:code>
+Invoke-SMMenu -Menu $Menu</dev:code>
         <dev:remarks>
           <maml:para>This example create a menu and a submenu. The submenu is created first, then the main menu. Special char keys are defined for some options.  For better readability, each lines of the items array is for a specific menu item, with title being passed as a pipe parameter. That way, the declaration looks very similar to the actual menu that will be displayed.</maml:para>
         </dev:remarks>
@@ -248,9 +991,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-SimpleMenuItem</command:name>
+      <command:name>New-SMMenuItem</command:name>
       <command:verb>New</command:verb>
-      <command:noun>SimpleMenuItem</command:noun>
+      <command:noun>SMMenuItem</command:noun>
       <maml:description>
         <maml:para>Create SimpleMenu item</maml:para>
       </maml:description>
@@ -260,7 +1003,7 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-SimpleMenuItem</maml:name>
+        <maml:name>New-SMMenuItem</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Title</maml:name>
           <maml:Description>
@@ -284,6 +1027,28 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Detailed</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Detailed Description}}</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Disabled</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Disabled Description}}</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ForegroundColor</maml:name>
@@ -332,9 +1097,155 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
           <maml:Description>
             <maml:para>Letter character associated to the menu item. If none defined, a number will be assigned to the item instead.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Clear</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Enter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pause</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Escape</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Spacebar</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PageDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">End</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Home</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">UpArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DownArrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Select</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Print</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Execute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PrintScreen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Insert</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Help</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">A</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">B</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">C</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">D</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">E</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">G</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">H</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">I</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">J</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">K</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">L</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">M</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">N</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">O</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">P</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Q</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">R</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">S</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">T</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">U</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">V</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">W</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">X</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Y</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Z</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LeftWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">RightWindows</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Applications</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Sleep</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad0</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NumPad9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Multiply</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Add</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Separator</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Subtract</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Decimal</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Divide</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F9</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F10</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F11</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F12</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F13</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F14</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F15</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F16</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F17</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F18</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F19</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F20</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F21</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F22</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F23</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">F24</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserBack</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserForward</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserRefresh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserSearch</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserFavorites</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">BrowserHome</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeMute</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeDown</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">VolumeUp</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaNext</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPrevious</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaStop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">MediaPlay</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMail</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchMediaSelect</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">LaunchApp2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPlus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemComma</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemMinus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemPeriod</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem2</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem3</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem4</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem5</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem6</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem7</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem8</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Oem102</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Packet</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Attention</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CrSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">ExSel</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">EraseEndOfFile</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Play</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Zoom</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">NoName</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pa1</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OemClear</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
           <dev:type>
-            <maml:name>Object</maml:name>
+            <maml:name>ConsoleKey</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -366,9 +1277,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
           <maml:Description>
             <maml:para>Set this menu item to open a submenu as action.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
           <dev:type>
-            <maml:name>Object</maml:name>
+            <maml:name>PSObject</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -387,6 +1298,30 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Detailed</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Detailed Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Disabled</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Disabled Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ForegroundColor</maml:name>
@@ -417,9 +1352,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
         <maml:Description>
           <maml:para>Letter character associated to the menu item. If none defined, a number will be assigned to the item instead.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
         <dev:type>
-          <maml:name>Object</maml:name>
+          <maml:name>ConsoleKey</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -453,9 +1388,9 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
         <maml:Description>
           <maml:para>Set this menu item to open a submenu as action.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
         <dev:type>
-          <maml:name>Object</maml:name>
+          <maml:name>PSObject</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -475,6 +1410,85 @@ Invoke-SimpleMenu -Menu $Menu</dev:code>
     </command:parameters>
     <command:inputTypes />
     <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:remarks>
+          <maml:para>{{ Add example description here }}</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-SMOptions</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>SMOptions</command:noun>
+      <maml:description>
+        <maml:para>{{Fill in the Synopsis}}</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>{{Fill in the Description}}</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-SMOptions</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Language</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill Language Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Language</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill Language Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
     <maml:alertSet>
       <maml:alert>
         <maml:para></maml:para>

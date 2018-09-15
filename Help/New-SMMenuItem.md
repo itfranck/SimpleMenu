@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-SimpleMenuItem
+# New-SMMenuItem
 
 ## SYNOPSIS
 Create SimpleMenu item
@@ -13,8 +13,8 @@ Create SimpleMenu item
 ## SYNTAX
 
 ```
-New-SimpleMenuItem [[-Title] <String>] [-ForegroundColor <ConsoleColor>] [-Id <Object>] [-Key <Object>]
- [-Action <ScriptBlock>] [-Quit] [-Pause] [-Submenu <Object>] [<CommonParameters>]
+New-SMMenuItem [[-Title] <String>] [-ForegroundColor <ConsoleColor>] [-Id <Object>] [-Key <ConsoleKey>]
+ [-Action <ScriptBlock>] [-Quit] [-Pause] [-Submenu <PSObject>] [-Detailed] [-Disabled] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,6 +36,36 @@ Scriptblock to be invoked when menu item is selected.
 
 ```yaml
 Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Detailed
+{{Fill Detailed Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Disabled
+{{Fill Disabled Description}}
+
+```yaml
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -83,9 +113,10 @@ Letter character associated to the menu item.
 If none defined, a number will be assigned to the item instead.
 
 ```yaml
-Type: Object
+Type: ConsoleKey
 Parameter Sets: (All)
 Aliases:
+Accepted values: Backspace, Tab, Clear, Enter, Pause, Escape, Spacebar, PageUp, PageDown, End, Home, LeftArrow, UpArrow, RightArrow, DownArrow, Select, Print, Execute, PrintScreen, Insert, Delete, Help, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, LeftWindows, RightWindows, Applications, Sleep, NumPad0, NumPad1, NumPad2, NumPad3, NumPad4, NumPad5, NumPad6, NumPad7, NumPad8, NumPad9, Multiply, Add, Separator, Subtract, Decimal, Divide, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14, F15, F16, F17, F18, F19, F20, F21, F22, F23, F24, BrowserBack, BrowserForward, BrowserRefresh, BrowserStop, BrowserSearch, BrowserFavorites, BrowserHome, VolumeMute, VolumeDown, VolumeUp, MediaNext, MediaPrevious, MediaStop, MediaPlay, LaunchMail, LaunchMediaSelect, LaunchApp1, LaunchApp2, Oem1, OemPlus, OemComma, OemMinus, OemPeriod, Oem2, Oem3, Oem4, Oem5, Oem6, Oem7, Oem8, Oem102, Process, Packet, Attention, CrSel, ExSel, EraseEndOfFile, Play, Zoom, NoName, Pa1, OemClear
 
 Required: False
 Position: Named
@@ -129,7 +160,7 @@ Accept wildcard characters: False
 Set this menu item to open a submenu as action.
 
 ```yaml
-Type: Object
+Type: PSObject
 Parameter Sets: (All)
 Aliases:
 

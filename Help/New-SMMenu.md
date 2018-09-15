@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-SimpleMenu
+# New-SMMenu
 
 ## SYNOPSIS
 Create SimpleMenu interface.
@@ -13,8 +13,8 @@ Create SimpleMenu interface.
 ## SYNTAX
 
 ```
-New-SimpleMenu [[-Title] <Object>] [[-Items] <Object>] [[-TitleForegroundColor] <ConsoleColor>]
- [[-Id] <Object>] [<CommonParameters>]
+New-SMMenu [[-Title] <String>] [[-Items] <SMMenuItem[]>] [[-ActionItems] <SMMenuItem[]>]
+ [[-TitleForegroundColor] <ConsoleColor>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,23 +26,23 @@ Submenus should be created prior to their parent menu to allow adding them when 
 ### Complete menu with submenu
 
 ```
-$OptionsMenu = New-SimpleMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
-    "Enter Powershell prompt"                   | New-SimpleMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
-    "Edit this menu"                            | New-SimpleMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
-    "Display script full path"                  | New-SimpleMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
-    "Back"                                      | New-SimpleMenuItem -Key b -Quit
+$OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
+    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
+    "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
+    "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
+    "Back"                                      | New-SMMenuItem -Key b -Quit
 )
 
 
-$Menu = New-SimpleMenu  -Title 'Service manager'   -Items @(
-    "Install Service"                           | New-SimpleMenuItem -ID 'Install'  -Action {InstallService} 
-    "Uninstall Service"                         | New-SimpleMenuItem -Action {UninstallService}
-    "Options"                                   | New-SimpleMenuItem -key 'O' -submenu $OptionsMenu
-    "Test Error"                                | New-SimpleMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
-    "Exit"                                      | New-SimpleMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
+$Menu = New-SMMenu  -Title 'Service manager'   -Items @(
+    "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
+    "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService}
+    "Options"                                   | New-SMMenuItem -key 'O' -submenu $OptionsMenu
+    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
+    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
 )
 
-Invoke-SimpleMenu -Menu $Menu
+Invoke-SMMenu -Menu $Menu
 ```
 
 This example create a menu and a submenu.
@@ -53,27 +53,26 @@ That way, the declaration looks very similar to the actual menu that will be dis
 
 ## PARAMETERS
 
-### -Id
-ID of the menu.
-Currently unusedé
+### -ActionItems
+{{Fill ActionItems Description}}
 
 ```yaml
-Type: Object
+Type: SMMenuItem[]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Items
-Array of SimpleMenuItem that should be created using the New-SimpleMenuItem cmdlet.
+Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.
 
 ```yaml
-Type: Object
+Type: SMMenuItem[]
 Parameter Sets: (All)
 Aliases:
 
@@ -88,7 +87,7 @@ Accept wildcard characters: False
 Defines menu title.
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -109,7 +108,7 @@ Aliases:
 Accepted values: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White
 
 Required: False
-Position: 2
+Position: 3
 Default value: Cyan
 Accept pipeline input: False
 Accept wildcard characters: False
