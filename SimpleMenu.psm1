@@ -1,4 +1,5 @@
 $functionFolders = @('Internal','Classes','Public')
+$ModuleRoot = $PSScriptRoot
 ForEach ($folder in $functionFolders)
 {
     $folderPath = Join-Path -Path $PSScriptRoot -ChildPath $folder

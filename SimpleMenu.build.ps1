@@ -7,7 +7,8 @@ task Stats RemoveStats, WriteStats
 $script:ModuleName = Split-Path -Path $PSScriptRoot -Leaf
 $script:ModuleRoot = $PSScriptRoot
 $script:OutPutFolder = "$PSScriptRoot\Output"
-$script:ImportFolders = @('Public', 'Internal', 'Classes')
+$script:ImportFolders = @('Internal','Public','Classes')
+$script:OutputPath = Join-Path -Path $PSScriptRoot -ChildPath "Output\$($script:ModuleName)"
 $script:PsmPath = Join-Path -Path $PSScriptRoot -ChildPath "Output\$($script:ModuleName)\$($script:ModuleName).psm1"
 $script:PsdPath = Join-Path -Path $PSScriptRoot -ChildPath "Output\$($script:ModuleName)\$($script:ModuleName).psd1"
 $script:HelpPath = Join-Path -Path $PSScriptRoot -ChildPath "Output\$($script:ModuleName)\en-US"
@@ -60,6 +61,9 @@ task Compile @compileParams {
             }
         }
     }
+    
+    Copy-Item -Path "$($script:ModuleRoot)\lang"  -Destination "$($script:OutputPath)\lang" -Recurse
+
 }
 
 task CopyPSD {
