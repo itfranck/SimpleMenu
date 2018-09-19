@@ -5,7 +5,7 @@ function Set-SMOptions {
     )
 
     if ($PSBoundParameters.ContainsKey('Language')) {
-        Import-LocalizedData -BindingVariable Messages -BaseDirectory 'lang'  -FileName 'strings' -UICulture $Language
+        Import-LocalizedData -BindingVariable Messages -BaseDirectory "$($ModuleRoot)\lang"  -FileName 'strings' -UICulture $Language
         $Script:Messages = $Messages
     }
 
