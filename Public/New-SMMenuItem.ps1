@@ -12,9 +12,8 @@ function New-SMMenuItem {
         [Switch]$Pause,
         [psobject]$Submenu,
         [Switch]$Detailed,
-        [Switch]$Disabled
-    
-
+        [Switch]$Disabled,
+        [Object[]]$ArgumentList
     )
     Begin {
         $MenuItem = New-Object -TypeName SMMenuItem -Property $PSBoundParameters

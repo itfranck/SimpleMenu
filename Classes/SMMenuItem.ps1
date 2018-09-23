@@ -11,6 +11,7 @@ class SMMenuItem {
     $runtimeKey
     [Switch]$Detailed
     [Switch]$Disabled
+    [Object[]]$ArgumentList
 }
 
 

@@ -2,8 +2,9 @@
 function Invoke-CommandPiped {
     [cmdletbinding()]
     Param([Parameter(ValueFromPipeline=$true)]$InputObject,
-    [scriptblock]$ScriptBlock)
+    [scriptblock]$ScriptBlock,
+    [Object[]]$ArgumentList)
         Process{
-            $ScriptBlock.Invoke($InputObject)
+           $ScriptBlock.Invoke($ArgumentList)
     }
 }

@@ -45,7 +45,8 @@ function Invoke-SMMenu {
                         $Menu.Print()
                     }
                     else {
-                        $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action)))
+                        
+                        $Result | Invoke-CommandPiped -ScriptBlock ([ScriptBlock]::Create(([String]$Result.Action))) -ArgumentList $Result.ArgumentList
                     }
 
                     
