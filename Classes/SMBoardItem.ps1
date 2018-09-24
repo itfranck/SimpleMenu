@@ -8,7 +8,9 @@ class SMBoardItem {
     [int]$Index
     [psobject]$Menu
     [Switch]$Quit
+    [Object[]]$ArgumentList
 
+    
     
     [Bool]PreviousPage() {
         if ($this.Index -gt 0) {

@@ -20,7 +20,7 @@ function New-SMMenu {
     if ($HasExit -eq $null) {
         $Cando = ($AllKeys | where Key -EQ ([System.ConsoleKey]::Escape)) -eq $null
         if ($Cando) {
-            $Menu.ActionItems += New-SMMenuItem -Key Escape -Quit
+            $Menu.ActionItems.Add((New-SMMenuItem -Key Escape -Quit))
         }
     }
     

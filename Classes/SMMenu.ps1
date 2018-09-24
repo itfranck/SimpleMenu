@@ -1,6 +1,6 @@
 ﻿class SMMenu {
-    [PSObject[]]$Items
-    [PSObject[]]$ActionItems
+    [System.Collections.Generic.List[psobject]]$Items
+    [System.Collections.Generic.List[psobject]]$ActionItems
     [String]$Title
     [ConsoleColor]$TitleForegroundColor = [ConsoleColor]::Cyan
     [SMMenu]$Parent = $null
@@ -28,7 +28,10 @@
         $AvailableKeys.AddRange($this.runtimeKeys)
         
         $AllItems = New-Object 'System.Collections.Generic.List[psobject]'
-        $AllItems.AddRange($this.Items);$AllItems.AddRange($this.ActionItems)
+
+
+
+        $AllItems.AddRange($this.Items);$AllItems.AddRange(([PSObject[]]$this.ActionItems))
         $AssignedKeys = $AllItems | Where key -NE $null 
         $AssignedKeys | % {$AvailableKeys.Remove($_.key);$_.runtimeKey = $_.key}
 

@@ -1,14 +1,13 @@
 ﻿class SMBoard {
     [System.ConsoleKey]$Previous = [System.ConsoleKey]::LeftArrow
     [System.ConsoleKey]$Next = [System.ConsoleKey]::RightArrow
-    [psobject[]]$Items
-    [psobject[]]$ActionItems
+    [System.Collections.Generic.List[psobject]]$Items
+    [System.Collections.Generic.List[psobject]]$ActionItems
     [String]$Title
     [INT]$Index
     [INT]$DefaultIndex
     [psobject]$CurrentActionBoard = $null
 
-        
 
 
     [Void]Print() {
@@ -71,7 +70,12 @@
 
     $OutTitle = "{0} $($This.Title) — $($CurrentItem.Title) {2} {1}" -f $Arrow1,$Arrow2,$Arrow3
     Write-Host $OutTitle  -ForegroundColor Cyan
-    Write-host ($this | Invoke-CommandPiped -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) | Out-String)
+    $Arguments = @{} 
+    $CurrentPage = $CurrentItem.Pages[$CurrentItem.Index]
+    if ($CurrentItem.ArgumentList -ne $null) {
+        $Arguments.Add('ArgumentList',$CurrentItem.ArgumentList[$CurrentItem.Index])
+    }
+    Write-host ($this | Invoke-CommandPiped @Arguments   -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) | Out-String)
     while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
     }
 

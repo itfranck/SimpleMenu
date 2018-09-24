@@ -7,7 +7,8 @@
         [scriptblock[]]$Pages,
         [System.ConsoleKey]$key,
         [SMMenu]$Menu,
-        [Switch]$Quit
+        [Switch]$Quit,
+        [Object[]]$ArgumentList
     )
 
      $Item = New-Object -TypeName 'SMBoardItem' -Property $PSBoundParameters
