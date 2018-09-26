@@ -2,10 +2,11 @@ function New-SMMenu {
     [cmdletbinding()]
     Param(
         [String]$Title,
-        [SMMenuItem[]]$Items,
-        [SMMenuItem[]]$ActionItems,
+        [psobject[]]$Items,
+        [psobject[]]$ActionItems,
         [ConsoleColor]$TitleForegroundColor
     )
+
     $Menu = New-Object -TypeName SMMenu -Property $PSBoundParameters
  
     $AllKeys = New-Object System.Collections.ArrayList
@@ -30,7 +31,6 @@ function New-SMMenu {
         Write-Error ($Messages.Warning_KeyAlreadyAssigned -f $Duplicates[0].Name)
     }
 
-    $AllItems = $Items + $ActionItems 
     $Menu.SetruntimeKeys()
     
     return $Menu
