@@ -14,7 +14,7 @@ Create a new SmBoardItem.
 
 ```
 New-SMBoardItem [[-Title] <String>] [-Pages <ScriptBlock[]>] [-key <ConsoleKey>] [-Menu <SMMenu>] [-Quit]
- [<CommonParameters>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,6 +30,21 @@ PS C:\> 'Main board'                               | New-SMBoardItem -Pages {'Lo
 This example create a new SMBoardItem that contains 3 pages. Pages scriptblock should display informations otherwise the console screen will be empty. 
 
 ## PARAMETERS
+
+### -ArgumentList
+{{Fill ArgumentList Description}}
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Menu
 Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.
