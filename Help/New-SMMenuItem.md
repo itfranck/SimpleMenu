@@ -14,7 +14,8 @@ Create SimpleMenu item
 
 ```
 New-SMMenuItem [[-Title] <String>] [-ForegroundColor <ConsoleColor>] [-Id <Object>] [-Key <ConsoleKey>]
- [-Action <ScriptBlock>] [-Quit] [-Pause] [-Submenu <PSObject>] [-Detailed] [-Disabled] [<CommonParameters>]
+ [-Action <ScriptBlock>] [-Quit] [-Pause] [-Submenu <PSObject>] [-Detailed] [-Disabled]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,6 +37,21 @@ Scriptblock to be invoked when menu item is selected.
 
 ```yaml
 Type: ScriptBlock
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ArgumentList
+{{Fill ArgumentList Description}}
+
+```yaml
+Type: Object[]
 Parameter Sets: (All)
 Aliases:
 
