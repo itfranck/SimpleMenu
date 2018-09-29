@@ -20,12 +20,12 @@
     else {
         $CurrentItem = $this.Items[$this.Index]
     }
-    
-    $Arrow1 = '◁'
-    $Arrow2 = '▷'
+    #˂˃˄˅
+    $Arrow1 = '|˂'
+    $Arrow2 = '˃|'
     $Arrow3 = ''
-    if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '◀'}
-    if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '▶'}
+    if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '˂'}
+    if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '˃'}
 
 
     if ($CurrentItem.menu -ne $null) {
@@ -58,12 +58,12 @@
 
 
     if ($CurrentItem.Pages.Count -gt 1) {
-        $Arrow31 = '▼'
-        $Arrow32 = '▲'
+        $Arrow31 = '-'
+        $Arrow32 = '-'
         
         switch ($CurrentItem.Index) {
-            0 {$Arrow32 = '△' }
-            {$_ -eq ($CurrentItem.Pages.Count -1)} {$Arrow31 = '▽'}
+            0 {$Arrow32 = '˄' }
+            {$_ -eq ($CurrentItem.Pages.Count -1)} {$Arrow31 = '˅'}
         }
         $Arrow3 = " ($($Arrow31)$($Arrow32))"
     }

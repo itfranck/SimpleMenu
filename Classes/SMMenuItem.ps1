@@ -1,6 +1,7 @@
 class SMMenuItem {
     [ScriptBlock]$Action = $null
-    [System.ConsoleColor]$ForegroundColor
+    [System.ConsoleColor]$ForegroundColor 
+    hidden [Switch]$ForegroundColorSet
     [String]$Id
     $Key = $null
     [SMMenu]$Parent = $null

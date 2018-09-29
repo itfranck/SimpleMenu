@@ -37,7 +37,7 @@ function Invoke-SMMenu {
                 try {
                     # Need to recreate the received scriptblock otherwise the $_ variable does not work :(
                     if ($Result.Detailed) {
-                        $BoardItem = New-SMBoardItem -Title $Result.Title -Pages $Result.Action -Quit
+                        $BoardItem = New-SMBoardItem -Title $Result.Title -Pages $Result.Action -Quit -ArgumentList $result.ArgumentList
                         $Board = New-SMBoard  -Title $Menu  -ActionItems $BoardItem 
                         $Board.CurrentActionBoard = $BoardItem 
                         Invoke-SMBoard $Board 

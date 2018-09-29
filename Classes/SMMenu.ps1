@@ -47,7 +47,9 @@
 
     Print() {
         $TitleParams = @{}
-        $TitleParams.Add('ForegroundColor', $this.TitleForegroundColor)
+        if ($this.TitleForegroundColor -ne $null) {
+            $TitleParams.Add('ForegroundColor', $this.TitleForegroundColor)
+        }
        
         Write-Host "$($this.TitleIndent)$($this.Title)" @TitleParams
         
@@ -56,7 +58,12 @@
             if ($_.Disabled) {
                 Write-Host $ItemTitle -ForegroundColor DarkGray
             } else {
-                Write-Host $ItemTitle
+                $ForegroundParam = $null
+                $ForegroundParam = @{}
+               if ($_.ForegroundColorSet) {
+                   $ForegroundParam.Add('ForegroundColor',$_.ForegroundColor)
+               }
+                Write-Host $ItemTitle @ForegroundParam
             }
          }
     }
