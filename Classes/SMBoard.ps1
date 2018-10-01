@@ -75,7 +75,14 @@
     if ($CurrentItem.ArgumentList -ne $null) {
         $Arguments.Add('ArgumentList',$CurrentItem.ArgumentList[$CurrentItem.Index])
     }
-    Write-host ($this | Invoke-CommandPiped @Arguments   -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) | Out-String)
+   
+    try {
+        Write-host ($this | Invoke-CommandPiped @Arguments   -ScriptBlock ([scriptblock]::Create($CurrentItem.Pages[$CurrentItem.Index])) | Out-String)
+   }
+   catch {
+       Write-Error $_ -ErrorAction Continue
+   }
+
     while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
     }
 

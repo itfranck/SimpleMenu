@@ -52,7 +52,7 @@ function Invoke-SMMenu {
                     
                 }
                 catch {
-                    Write-Error $_
+                    Write-Error $_ -ErrorAction Continue
                     $ShouldPause = $true
                 }
 
