@@ -699,9 +699,9 @@
           <maml:Description>
             <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
           <dev:type>
-            <maml:name>SMMenuItem[]</maml:name>
+            <maml:name>PSObject[]</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -711,9 +711,9 @@
           <maml:Description>
             <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
           <dev:type>
-            <maml:name>SMMenuItem[]</maml:name>
+            <maml:name>PSObject[]</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -756,9 +756,9 @@
         <maml:Description>
           <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
         <dev:type>
-          <maml:name>SMMenuItem[]</maml:name>
+          <maml:name>PSObject[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -768,9 +768,9 @@
         <maml:Description>
           <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">SMMenuItem[]</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
         <dev:type>
-          <maml:name>SMMenuItem[]</maml:name>
+          <maml:name>PSObject[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>

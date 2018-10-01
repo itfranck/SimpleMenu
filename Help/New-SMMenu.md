@@ -13,7 +13,7 @@ Create SimpleMenu interface.
 ## SYNTAX
 
 ```
-New-SMMenu [[-Title] <String>] [[-Items] <SMMenuItem[]>] [[-ActionItems] <SMMenuItem[]>]
+New-SMMenu [[-Title] <String>] [[-Items] <PSObject[]>] [[-ActionItems] <PSObject[]>]
  [[-TitleForegroundColor] <ConsoleColor>] [<CommonParameters>]
 ```
 
@@ -57,7 +57,7 @@ That way, the declaration looks very similar to the actual menu that will be dis
 Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.
 
 ```yaml
-Type: SMMenuItem[]
+Type: PSObject[]
 Parameter Sets: (All)
 Aliases:
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.
 
 ```yaml
-Type: SMMenuItem[]
+Type: PSObject[]
 Parameter Sets: (All)
 Aliases:
 
