@@ -1,6 +1,8 @@
-﻿#Remove-Module SimpleMenu
-Import-Module '.\..\SimpleMenu.psm1' -Force
+﻿Get-Module SimpleMenu | Remove-Module
+Import-Module SimpleMenu
+#Import-Module "$Script:PSScriptRoot\..\SimpleMenu.psm1" -Force
 
+$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
 
 Function Get-BaseInfos() {
     [System.Collections.Generic.List[psobject]]$Results = Get-NetIPAddress |  Where {$_.AddressState -EQ 'Preferred' -and $_.IPAddress -ne $null -and $_.IPAddress -ne '127.0.0.1' } | Sort-Object -Property PrefixOrigin -Descending | Select IPAddress,InterfaceAlias
@@ -49,10 +51,16 @@ $($Results | Out-String)
 "@
 }
 
-$ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
+$AboutOut = @"
+Demonstration sample console application made using SimpleMenu. 
+———
+
+
+"@
+
 
 $options = New-SMMenu -Title 'Quick actions' -Items @(
-    New-SMMenuItem -Title 'Empty all recycle bins' -Action {}
+    New-SMMenuItem -Title 'Empty all recycle bins' -Action {Write-Host 'Clearing all recycle bins...' -ForegroundColor Cyan;Clear-RecycleBin -Force;Write-Host 'Done!' -ForegroundColor Green}
     New-SMMenuItem -Title 'Back' -Quit -Key B
 ) -ActionItems @(
     New-SMMenuItem -Title 'Back' -Quit -Key Escape
@@ -60,14 +68,19 @@ $options = New-SMMenu -Title 'Quick actions' -Items @(
 
 
 $Menu = New-SMMenu -Title 'Computers infos' -Items @(
-    New-SMMenuItem -Title 'Computer informations' -Detailed -Action {Get-ComputerInfos}
-    New-SMMenuItem -Title 'IP Address' -Detailed -Action { Get-BaseInfos}
+    New-SMMenuItem -Title 'Computer informations' -Detailed -Action ${function:Get-ComputerInfos}
+    New-SMMenuItem -Title 'IP Address' -Detailed -Action ${function:Get-BaseInfos}
     New-SMMenuItem -Title 'Quick actions' -Submenu $options
+    New-SMMenuItem -Title 'About'   -Key Z -ForegroundColor Yellow -Action {Param($AboutOut) "$AboutOut"} -Detailed -ArgumentList $AboutOut
+    New-SMMenuItem -Title 'Quit' -Key X -Quit
+    
+    
+) -ActionItems @(
+    New-SMMenuItem -Title 'Quit' -Key Escape -Quit
 )
 
 
 
-Invoke-SMMenu $Menu
+Invoke-SMMenu $Menu 
 
 
-    
