@@ -83,7 +83,9 @@
        Write-Error $_ -ErrorAction Continue
    }
 
-    while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
+    if (![Console]::IsInputRedirected) {
+        while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
+    }
     }
 
 [Void]PreviousBoard() {

@@ -16,6 +16,10 @@ function Invoke-SMMenu {
       
         if ([console]::IsInputRedirected) {
             $Line = Read-Host
+            if ($Line.Length -eq 1) {
+                $Line = [System.ConsoleKey]([int][char]($Line.ToUpper()))
+            }
+            
         }
         else {
             [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
@@ -81,7 +85,7 @@ function Invoke-SMMenu {
                 if (-not   $Debug ){Clear-Host}
                 $Menu.Parent.Print()
             }
-            $Menu.QuitKey = $LineRaw.Key
+            $Menu.QuitKey = $Line
             return
         }
 

@@ -8,10 +8,25 @@ $Board.Index =  $Board.DefaultIndex
 $PageIndex = 0
 $Board.Print()
 
-while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
+  if (![console]::IsInputRedirected) { 
+    while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
+  }
+
 
     while ($true) {
+        if ([console]::IsInputRedirected) {
+            $Line = Read-Host
+            if ($Line.Length -eq 1) {
+                $LineRaw = [System.ConsoleKey]([int][char]($Line.ToUpper()))
+            }
+            
+        }
+        else {
          [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
+        }
+
+
+
             Switch ($LineRaw.Key) {
                ($Board.Previous) {
                 if ($Board.CurrentActionBoard.Quit) {Return}
