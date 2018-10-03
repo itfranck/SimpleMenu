@@ -1,6 +1,8 @@
 ﻿class SMBoard {
     [System.ConsoleKey]$Previous = [System.ConsoleKey]::LeftArrow
     [System.ConsoleKey]$Next = [System.ConsoleKey]::RightArrow
+    [System.ConsoleKey]$PreviousPage = [System.ConsoleKey]::UpArrow
+    [System.ConsoleKey]$NextPage = [System.ConsoleKey]::DownArrow
     [System.Collections.Generic.List[psobject]]$Items
     [System.Collections.Generic.List[psobject]]$ActionItems
     [String]$Title

@@ -16,9 +16,14 @@ function New-SMBoard {
         Write-Error ($Messages.Warning_KeyAlreadyAssigned -f $Duplicates[0].Name)
     }
     
-
-
-    return New-Object -TypeName SMBoard -Property $PSBoundParameters
+    $Board = New-Object -TypeName SMBoard -Property $PSBoundParameters
+    if ([Console]::IsInputRedirected) {
+        $Board.Previous = [System.ConsoleKey]([int][char]'A')
+        $Board.Next = [System.ConsoleKey]([int][char]'D')
+        $Board.PreviousPage = [System.ConsoleKey]([int][char]'W')
+        $Board.NextPage = [System.ConsoleKey]([int][char]'S')
+    }
+    return $Board
 
 
 }

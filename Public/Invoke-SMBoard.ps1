@@ -22,23 +22,23 @@ $Board.Print()
             
         }
         else {
-         [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
+         [System.ConsoleKey]$LineRaw = ([Console]::ReadKey($true)).Key
         }
 
 
 
-            Switch ($LineRaw.Key) {
+            Switch ($LineRaw) {
                ($Board.Previous) {
                 if ($Board.CurrentActionBoard.Quit) {Return}
                         
                 $Board.PreviousBoard();break}
                ($Board.Next) {$Board.NextBoard();break}
-               ([System.ConsoleKey]::UpArrow) {$Board.PreviousPage();break}
-               ([System.ConsoleKey]::DownArrow){$Board.NextPage();break}
+               ($Board.PreviousPage) {$Board.PreviousPage();break}
+               ($Board.NextPage){$Board.NextPage();break}
                ([System.ConsoleKey]::Escape) {return}
                Default {
                 if ($Board.CurrentActionBoard.Quit) {break}
-                 $Board.CurrentActionBoard = $Board.ActionItems | where Key -eq $LineRaw.Key
+                 $Board.CurrentActionBoard = $Board.ActionItems | where Key -eq $LineRaw
                  if ($Board.CurrentActionBoard -ne $null ) {
                     
                     $Board.Print()
