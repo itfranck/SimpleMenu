@@ -20,8 +20,8 @@ function New-SMBoard {
     if ([Console]::IsInputRedirected) {
         $Board.Previous = [System.ConsoleKey]([int][char]'A')
         $Board.Next = [System.ConsoleKey]([int][char]'D')
-        $Board.PreviousPage = [System.ConsoleKey]([int][char]'W')
-        $Board.NextPage = [System.ConsoleKey]([int][char]'S')
+        $Board.PreviousPageKey = [System.ConsoleKey]([int][char]'W')
+        $Board.NextPageKey = [System.ConsoleKey]([int][char]'S')
     }
     return $Board
 

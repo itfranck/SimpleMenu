@@ -1,7 +1,6 @@
-Get-module SimpleMenu | Remove-module -Force 
-#powershell.exe -File '\..\SimpleMenu.psm1'
-
-Import-Module "$Script:PSScriptRoot\..\SimpleMenu.psm1" -Force
+#Get-module SimpleMenu | Remove-module -Force 
+Import-Module SimpleMenu
+#Import-Module "$Script:PSScriptRoot\..\SimpleMenu.psm1" -Force
 
 
 $TempFileName = [System.IO.Path]::GetTempFileName()
