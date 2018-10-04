@@ -164,9 +164,9 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Invoke-SMMenu -Menu $Menu</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Invoke a menu created through the New-SMMenu cmdlet. See that cmdlet for a complete example.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
