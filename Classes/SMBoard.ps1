@@ -37,8 +37,16 @@
         $InTitle = $CurrentItem.Menu.Title
         $CurrentItem.Menu.TitleIndent = ''
         $CurrentItem.Menu.Title = $OutTitle
-        $QuitAction = New-SMMenuItem -Key LeftArrow -Quit ; $QuitAction.RuntimeKey = [System.ConsoleKey]::LeftArrow
-        $QuitAction1 = New-SMMenuItem -Key RightArrow -Quit ; $QuitAction1.RuntimeKey = [System.ConsoleKey]::RightArrow
+
+        $QuitActionKey = [System.ConsoleKey]::LeftArrow
+        $QuitAction1Key = [System.ConsoleKey]::RightArrow
+        if ([Console]::IsInputRedirected) {
+            $QuitActionKey = [System.ConsoleKey]::A
+            $QuitAction1Key = [System.ConsoleKey]::D
+        }
+
+        $QuitAction = New-SMMenuItem -Key $QuitActionKey -Quit ; $QuitAction.RuntimeKey = $QuitActionKey
+        $QuitAction1 = New-SMMenuItem -Key $QuitAction1Key -Quit ; $QuitAction1.RuntimeKey = $QuitAction1Key
 
         if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$CurrentItem.Menu.ActionItems+= $QuitAction}
         if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$CurrentItem.Menu.ActionItems+= $QuitAction1}
@@ -52,8 +60,8 @@
         $CurrentItem.Menu.TitleIndent = $inIndent
         $CurrentItem.Menu.ActionItems = $inActionItems
         switch ($CurrentItem.Menu.QuitKey) {
-            LeftArrow {$this.PreviousBoard() }
-            RightArrow {$this.NextBoard()}
+            {$_ -in 'LeftArrow','A'} {$this.PreviousBoard() }
+            {$_ -in 'RightArrow','D'} {$this.NextBoard()}
         }
         return
     }

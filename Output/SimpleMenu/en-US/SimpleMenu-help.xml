@@ -71,9 +71,9 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Invoke-SMBoard $Board</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Invoke a SMBoard created previously through New-SMBoard. See that cmdlet for a full example.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -315,9 +315,16 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; $Board = New-SMBoard -Title 'Demonstration board' -DefaultIndex 1 -Items @(
+    'Options'                   | New-SMBoardItem -Menu $Menu
+    'Welcome'                   | New-SMBoardItem -Pages $WelcomePage
+    'Config '                   | New-SMBoardItem -Pages {Param($ConfigFile) get-content $ConfigFile } -ArgumentList $TempFileName
+    'Some other informations'   | New-SMBoardItem -Pages (Get-Infos)
+    'Last item'                 | New-SMBoardItem -Pages {"This is the last page... Here are some infos Lorem Ipsum etc..."}
+)
+Invoke-SMBoard $Board</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This example demonstrate ceration of a SMBoard and its invocation.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
