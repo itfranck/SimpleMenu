@@ -25,10 +25,17 @@ The SMBoard provides navigation keys for multiple items and allows the creation 
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> $Board = New-SMBoard -Title 'Demonstration board' -DefaultIndex 1 -Items @(
+    'Options'                   | New-SMBoardItem -Menu $Menu
+    'Welcome'                   | New-SMBoardItem -Pages $WelcomePage
+    'Config '                   | New-SMBoardItem -Pages {Param($ConfigFile) get-content $ConfigFile } -ArgumentList $TempFileName
+    'Some other informations'   | New-SMBoardItem -Pages (Get-Infos)
+    'Last item'                 | New-SMBoardItem -Pages {"This is the last page... Here are some infos Lorem Ipsum etc..."}
+)
+Invoke-SMBoard $Board
 ```
 
-{{ Add example description here }}
+This example demonstrate ceration of a SMBoard and its invocation.
 
 ## PARAMETERS
 
