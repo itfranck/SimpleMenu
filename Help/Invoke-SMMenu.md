@@ -24,10 +24,10 @@ The menu will produce warning if undefined keys are pressed or no actions for a 
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Invoke-SMMenu -Menu $Menu
 ```
 
-{{ Add example description here }}
+Invoke a menu created through the New-SMMenu cmdlet. See that cmdlet for a complete example. 
 
 ## PARAMETERS
 
