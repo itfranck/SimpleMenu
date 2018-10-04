@@ -23,10 +23,10 @@ Invoke SMBoard to display informations in a convenient manner.
 
 ### Example 1
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Invoke-SMBoard $Board
 ```
 
-{{ Add example description here }}
+Invoke a SMBoard created previously through New-SMBoard. See that cmdlet for a full example.
 
 ## PARAMETERS
 
