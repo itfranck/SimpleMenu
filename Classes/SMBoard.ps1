@@ -1,8 +1,8 @@
 ﻿class SMBoard {
     [System.ConsoleKey]$Previous = [System.ConsoleKey]::LeftArrow
     [System.ConsoleKey]$Next = [System.ConsoleKey]::RightArrow
-    [System.ConsoleKey]$PreviousPage = [System.ConsoleKey]::UpArrow
-    [System.ConsoleKey]$NextPage = [System.ConsoleKey]::DownArrow
+    [System.ConsoleKey]$PreviousPageKey = [System.ConsoleKey]::UpArrow
+    [System.ConsoleKey]$NextPageKey = [System.ConsoleKey]::DownArrow
     [System.Collections.Generic.List[psobject]]$Items
     [System.Collections.Generic.List[psobject]]$ActionItems
     [String]$Title
@@ -60,12 +60,12 @@
 
 
     if ($CurrentItem.Pages.Count -gt 1) {
-        $Arrow31 = '-'
-        $Arrow32 = '-'
+        $Arrow31 = '˅'
+        $Arrow32 = '˄'
         
         switch ($CurrentItem.Index) {
-            0 {$Arrow32 = '˄' }
-            {$_ -eq ($CurrentItem.Pages.Count -1)} {$Arrow31 = '˅'}
+            0 {$Arrow32 = '-' }
+            {$_ -eq ($CurrentItem.Pages.Count -1)} {$Arrow31 = '-'}
         }
         $Arrow3 = " ($($Arrow31)$($Arrow32))"
     }

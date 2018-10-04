@@ -33,8 +33,8 @@ $Board.Print()
                         
                 $Board.PreviousBoard();break}
                ($Board.Next) {$Board.NextBoard();break}
-               ($Board.PreviousPage) {$Board.PreviousPage();break}
-               ($Board.NextPage){$Board.NextPage();break}
+               ($Board.PreviousPageKey) {$Board.PreviousPage();break}
+               ($Board.NextPageKey){$Board.NextPage();break}
                ([System.ConsoleKey]::Escape) {return}
                Default {
                 if ($Board.CurrentActionBoard.Quit) {break}
