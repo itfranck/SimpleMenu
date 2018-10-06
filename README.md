@@ -25,6 +25,12 @@ The simple menu default behavior is to display the result under the menu locatio
 
 The simple board can also integrate menus within it through the use of the -menu parameter. 
 
+## Notes
+Regarding the smboard navigation, arrows (Left/Right Down/Up) are used by default.
+However, in ISE, they are replaced by WASD controls.
+Furthermore, ISE not supporting the ReadKey method, ENTER must be pressed after each key press to actually process the key. 
+VSCode and the Powershell are not affected by this. 
+
 
 ### Example
 Here is what the structure of a simple menu looks like.
