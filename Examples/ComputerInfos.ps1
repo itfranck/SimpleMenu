@@ -60,26 +60,24 @@ Demonstration sample console application made using SimpleMenu.
 
 
 $options = New-SMMenu -Title 'Quick actions' -Items @(
-    New-SMMenuItem -Title 'Empty all recycle bins' -Action {Write-Host 'Clearing all recycle bins...' -ForegroundColor Cyan;Clear-RecycleBin -Force;Write-Host 'Done!' -ForegroundColor Green}
-    New-SMMenuItem -Title 'Back' -Quit -Key B
+    'Empty all recycle bins'                    | New-SMMenuItem -Title -Action {Write-Host 'Clearing all recycle bins...' -ForegroundColor Cyan;Clear-RecycleBin -Force;Write-Host 'Done!' -ForegroundColor Green}
+    'Back'                                      | New-SMMenuItem -Quit -Key B
 ) -ActionItems @(
-    New-SMMenuItem -Title 'Back' -Quit -Key Escape
+    'Back'                                      | New-SMMenuItem -Quit -Key Escape
 )
 
 
 $Menu = New-SMMenu -Title 'Computers infos' -Items @(
-    New-SMMenuItem -Title 'Computer informations' -Detailed -Action ${function:Get-ComputerInfos}
-    New-SMMenuItem -Title 'IP Address' -Detailed -Action ${function:Get-BaseInfos}
-    New-SMMenuItem -Title 'Quick actions' -Submenu $options
-    New-SMMenuItem -Title 'About'   -Key Z -ForegroundColor Yellow -Action {Param($AboutOut) "$AboutOut"} -Detailed -ArgumentList $AboutOut
-    New-SMMenuItem -Title 'Quit' -Key X -Quit
+    'Computer informations'                     | New-SMMenuItem -Detailed -Action ${function:Get-ComputerInfos}
+    'IP Address'                                | New-SMMenuItem -Title -Detailed -Action ${function:Get-BaseInfos}
+    'Quick actions'                             | New-SMMenuItem -Submenu $options
+    'About'                                     | New-SMMenuItem -Title -Key Z -ForegroundColor Yellow -Action {Param($AboutOut) "$AboutOut"} -Detailed -ArgumentList $AboutOut
+    'Quit'                                      | New-SMMenuItem -Title  -Key X -Quit
     
     
 ) -ActionItems @(
-    New-SMMenuItem -Title 'Quit' -Key Escape -Quit
+    'Quit'                                      | New-SMMenuItem -Key Escape -Quit
 )
-
-
 
 Invoke-SMMenu $Menu 
 
