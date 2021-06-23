@@ -45,7 +45,10 @@ task Compile @compileParams {
         Remove-Item -Path $script:PsmPath -Recurse -Force
     }
     New-Item -Path $script:PsmPath -Force > $null
-
+    $utf8 = ([System.Text.UTF8Encoding]::new($false))
+    Set-Content -Value $utf8.GetBytes('') -Encoding Byte -Path $script:PsmPath
+    
+   
     foreach ($folder in $script:ImportFolders)
     {
         $currentFolder = Join-Path -Path $script:ModuleRoot -ChildPath $folder
