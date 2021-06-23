@@ -1,5 +1,5 @@
 function New-SMMenuItem {
-    [cmdletbinding()]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/New-SMMenuItem.md')]
     param(
         [Parameter(Position = 0, ValueFromPipeline = $true)]
         [ValidateNotNullorEmpty()] #No value

@@ -16,9 +16,9 @@ Function UninstallService() {
 
 
 $OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red   -Items @(
-   "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
-   "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
-   "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
+   "Enter Powershell prompt"                   | New-SMMenuItem -Action { Write-host 'Type exit to go back to menu'; $host.enternestedprompt() } 
+   "Edit this menu"                            | New-SMMenuItem -Action { powershell_ise.exe "$ScriptFullPath" }
+   "Display script full path"                  | New-SMMenuItem  -Action { Write-Host $ScriptFullPath -ForegroundColor Yellow }
    "Back"                                      | New-SMMenuItem -Key B -Quit
 )
 
@@ -32,25 +32,25 @@ $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
 
 
 $Menu = New-SMMenu  -Title 'Service manager' -Items @(
-   "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
-   "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService} 
+   "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action { InstallService } 
+   "Uninstall Service"                         | New-SMMenuItem -Action { UninstallService } 
    'Empty'                                     | New-SMMenuItem 
-   "Change this menu"                          | New-SMMenuItem -Id 'ChangeItem' -Action {$_.Title = 'Yay !';cls;$Menu.Print();}
-   "Test Error"                                | New-SMMenuItem -Key D   -Action {Throw 'Unmanaged error'} 
+   "Change this menu"                          | New-SMMenuItem -Id 'ChangeItem' -Action { $_.Title = 'Yay !'; cls; $Menu.Print(); }
+   "Test Error"                                | New-SMMenuItem -Key D   -Action { Throw 'Unmanaged error' } 
    "Options"                                   | New-SMMenuItem -key O -submenu $OptionsMenu
-   "Exit"                                      | New-SMMenuItem -Key RightArrow -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
+   "Exit"                                      | New-SMMenuItem -Key RightArrow -Action {} -Quit 
 ) -ActionItems @(
-    New-SMMenuItem -Key X -Action {Write-Host 'Boo !' -ForegroundColor Red} -Quit -Pause
+   New-SMMenuItem -Key X -Action { Write-Host 'Boo !' -ForegroundColor Red } -Quit -Pause
 )
 
 
-$Board3 = New-SMBoard -Title 'Crypto informations' -DefaultIndex 1 -Items @(
-    'Options'                                  | New-SMBoardItem -Pages {Invoke-SMMenu -Menu $Menu; $_.NextBoard()} 
-    'Main board'                               | New-SMBoardItem -Pages {' Page 1'},{'Page 2'},{'Page 3'} 
-    'Crypto infos'                             | New-SMBoardItem -Pages {'Board 2'}
+$Board3 = New-SMBoard -Title 'Crypto informations' -DefaultIndex 2 -Items @(
+   'Options'                                  | New-SMBoardItem -Pages { Invoke-SMMenu -Menu $Menu; $_.NextBoard() } 
+   'Main board'                               | New-SMBoardItem -Pages { ' Page 1' }, { 'Page 2' }, { 'Page 3' } 
+   'Crypto infos'                             | New-SMBoardItem -Pages { 'Board 2' }
 ) -ActionItems @(
-    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'},{'page 2'} -key X
-    'Hidden :)'                                | New-SMBoardItem -Pages {'hidden'} -key y
+   'Hidden :)'                                | New-SMBoardItem -Pages { 'hidden' }, { 'page 2' } -key X
+   'Hidden :)'                                | New-SMBoardItem -Pages { 'hidden' } -key y
 )
 
 

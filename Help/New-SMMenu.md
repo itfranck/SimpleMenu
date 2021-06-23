@@ -27,7 +27,7 @@ Submenus should be created prior to their parent menu to allow adding them when 
 
 ```
 $OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
-    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
+    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
     "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
     "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
     "Back"                                      | New-SMMenuItem -Key b -Quit
@@ -38,8 +38,8 @@ $Menu = New-SMMenu  -Title 'Service manager'   -Items @(
     "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
     "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService}
     "Options"                                   | New-SMMenuItem -key 'O' -submenu $OptionsMenu
-    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
-    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
+    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} 
+    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
 )
 
 Invoke-SMMenu -Menu $Menu
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

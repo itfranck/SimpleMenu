@@ -17,9 +17,9 @@
         <maml:name>Invoke-SMBoard</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Board</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>SMBoard to be invoked.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
           <dev:type>
             <maml:name>SMBoard</maml:name>
@@ -32,9 +32,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Board</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>SMBoard to be invoked.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">SMBoard</command:parameterValue>
         <dev:type>
           <maml:name>SMBoard</maml:name>
@@ -96,9 +96,9 @@
         <maml:name>Invoke-SMMenu</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Menu</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Menu to be invoked.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
           <dev:type>
             <maml:name>SMMenu</maml:name>
@@ -108,9 +108,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Print the mene then exit.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -122,9 +122,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Menu</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Menu to be invoked.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
         <dev:type>
           <maml:name>SMMenu</maml:name>
@@ -134,9 +134,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>PassThru</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Print the mene then exit.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -189,9 +189,9 @@
         <maml:name>New-SMBoard</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Title</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Title of the board.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
             <maml:name>Object</maml:name>
@@ -201,9 +201,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Items</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Board Items to be dispayed. They can be navigated from and to using navigation keys</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
           <dev:type>
             <maml:name>SMBoardItem[]</maml:name>
@@ -213,9 +213,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>ActionItems</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Action Items are not available through the arrow navigation and need to be accessed using the defined key.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
           <dev:type>
             <maml:name>SMBoardItem[]</maml:name>
@@ -225,9 +225,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>DefaultIndex</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
           <dev:type>
             <maml:name>Int32</maml:name>
@@ -240,9 +240,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>ActionItems</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Action Items are not available through the arrow navigation and need to be accessed using the defined key.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
         <dev:type>
           <maml:name>SMBoardItem[]</maml:name>
@@ -252,9 +252,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>DefaultIndex</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>DefaultIndex can be used to set the initial board item to be displayed not the first one.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
         <dev:type>
           <maml:name>Int32</maml:name>
@@ -264,9 +264,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Items</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Board Items to be dispayed. They can be navigated from and to using navigation keys</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">SMBoardItem[]</command:parameterValue>
         <dev:type>
           <maml:name>SMBoardItem[]</maml:name>
@@ -276,9 +276,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Title</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Title of the board.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
           <maml:name>Object</maml:name>
@@ -347,9 +347,9 @@ Invoke-SMBoard $Board</dev:code>
         <maml:name>New-SMBoardItem</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Title</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Title of the board item. It will be displayed when navigated to.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
@@ -359,9 +359,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ArgumentList</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>{{Fill ArgumentList Description}}</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
           <dev:type>
             <maml:name>Object[]</maml:name>
@@ -371,9 +371,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Menu</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
           <dev:type>
             <maml:name>SMMenu</maml:name>
@@ -383,9 +383,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Pages</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Scriptblock producing a number of informations (string) to be displayed. As soon as multiple pages are used, an up/down arrow will be shown.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
           <dev:type>
             <maml:name>ScriptBlock[]</maml:name>
@@ -395,9 +395,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Quit</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Item is used to exit the SMBoard. This will exit the module script. Makes most sense used to define an exit key in the ActionItems</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -406,9 +406,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>key</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Key to trigger that item. If the SMBoardItem is a regular item, it will be available with the navigation keys but the key parameter could allows to return to it using that method too. Otherwise, it is mostly intended for the Action Items, which are unavailable otherwise.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
@@ -567,9 +567,9 @@ Invoke-SMBoard $Board</dev:code>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ArgumentList</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>{{Fill ArgumentList Description}}</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
         <dev:type>
           <maml:name>Object[]</maml:name>
@@ -579,9 +579,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Menu</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Invoke a SMMenu into the board. Useful to add an option page to the board and to suit other needs.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">SMMenu</command:parameterValue>
         <dev:type>
           <maml:name>SMMenu</maml:name>
@@ -591,9 +591,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Pages</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Scriptblock producing a number of informations (string) to be displayed. As soon as multiple pages are used, an up/down arrow will be shown.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock[]</command:parameterValue>
         <dev:type>
           <maml:name>ScriptBlock[]</maml:name>
@@ -603,9 +603,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Quit</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Item is used to exit the SMBoard. This will exit the module script. Makes most sense used to define an exit key in the ActionItems</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -615,9 +615,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>Title</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Title of the board item. It will be displayed when navigated to.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
           <maml:name>String</maml:name>
@@ -627,9 +627,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>key</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Key to trigger that item. If the SMBoardItem is a regular item, it will be available with the navigation keys but the key parameter could allows to return to it using that method too. Otherwise, it is mostly intended for the Action Items, which are unavailable otherwise.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
         <dev:type>
           <maml:name>ConsoleKey</maml:name>
@@ -691,9 +691,9 @@ Invoke-SMBoard $Board</dev:code>
         <maml:name>New-SMMenu</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Title</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Defines menu title.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
@@ -703,9 +703,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Items</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
           <dev:type>
             <maml:name>PSObject[]</maml:name>
@@ -715,9 +715,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>ActionItems</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
           <dev:type>
             <maml:name>PSObject[]</maml:name>
@@ -727,9 +727,9 @@ Invoke-SMBoard $Board</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>TitleForegroundColor</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Foreground color of the menu title.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Black</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DarkBlue</command:parameterValue>
@@ -760,9 +760,9 @@ Invoke-SMBoard $Board</dev:code>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>ActionItems</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet. The action items are just like the normal items but hidden.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
         <dev:type>
           <maml:name>PSObject[]</maml:name>
@@ -772,9 +772,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Items</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Array of SimpleMenuItem that should be created using the New-SMMenuItem cmdlet.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">PSObject[]</command:parameterValue>
         <dev:type>
           <maml:name>PSObject[]</maml:name>
@@ -784,9 +784,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Title</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Defines menu title.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
           <maml:name>String</maml:name>
@@ -796,9 +796,9 @@ Invoke-SMBoard $Board</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>TitleForegroundColor</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Foreground color of the menu title.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ConsoleColor</command:parameterValue>
         <dev:type>
           <maml:name>ConsoleColor</maml:name>
@@ -827,7 +827,7 @@ Invoke-SMBoard $Board</dev:code>
       <command:example>
         <maml:title>------------------ Complete menu with submenu ------------------</maml:title>
         <dev:code>$OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red  -Items @(
-    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} -NoPause
+    "Enter Powershell prompt"                   | New-SMMenuItem -Action {Write-host 'Type exit to go back to menu';$host.enternestedprompt()} 
     "Edit this menu"                            | New-SMMenuItem -Action {powershell_ise.exe "$ScriptFullPath"}
     "Display script full path"                  | New-SMMenuItem  -Action {Write-Host $ScriptFullPath -ForegroundColor Yellow}
     "Back"                                      | New-SMMenuItem -Key b -Quit
@@ -838,8 +838,8 @@ $Menu = New-SMMenu  -Title 'Service manager'   -Items @(
     "Install Service"                           | New-SMMenuItem -ID 'Install'  -Action {InstallService} 
     "Uninstall Service"                         | New-SMMenuItem -Action {UninstallService}
     "Options"                                   | New-SMMenuItem -key 'O' -submenu $OptionsMenu
-    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} -NoPause
-    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit -NoPause
+    "Test Error"                                | New-SMMenuItem -Key 'd' -Action {Throw 'Unmanaged error'} 
+    "Exit"                                      | New-SMMenuItem -Key 'x' -Action {Write-Host 'Farewell, see you next time !' -ForegroundColor Green} -Quit 
 )
 
 Invoke-SMMenu -Menu $Menu</dev:code>
@@ -867,9 +867,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <maml:name>New-SMMenuItem</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>Title</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Display text of menu item.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
@@ -879,9 +879,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Action</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Scriptblock to be invoked when menu item is selected.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
           <dev:type>
             <maml:name>ScriptBlock</maml:name>
@@ -891,9 +891,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ArgumentList</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>{{Fill ArgumentList Description}}</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
           <dev:type>
             <maml:name>Object[]</maml:name>
@@ -903,9 +903,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Detailed</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Use a SMBoardItem to display the result. Perfect when you have more than a few lines to display. The back navigation arrow will also shows and send the user back to the menu.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -914,9 +914,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Disabled</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Set the menu item to disabled. A menu item can also be disabled/enabled if $_.Disabled = $true or $false is set in the action block of that same item.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -925,9 +925,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ForegroundColor</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Foreground color of menu item.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Black</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">DarkBlue</command:parameterValue>
@@ -955,9 +955,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Id</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>ID of menu item. Used to get item and perform changes after creation (optional)</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
             <maml:name>Object</maml:name>
@@ -967,9 +967,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Key</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Letter character associated to the menu item. If none defined, a number will be assigned to the item instead.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Backspace</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Tab</command:parameterValue>
@@ -1125,9 +1125,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Pause</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Pause after invoking action (Default:False)</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -1136,9 +1136,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Quit</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>If defined, choosing this menu item will exit the current menu. If the current menu is a submenu, this will bring back to parent menu,</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -1147,9 +1147,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Submenu</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Set this menu item to open a submenu as action.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
           <dev:type>
             <maml:name>PSObject</maml:name>
@@ -1162,9 +1162,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Action</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Scriptblock to be invoked when menu item is selected.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
         <dev:type>
           <maml:name>ScriptBlock</maml:name>
@@ -1174,9 +1174,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ArgumentList</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>{{Fill ArgumentList Description}}</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
         <dev:type>
           <maml:name>Object[]</maml:name>
@@ -1186,9 +1186,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Detailed</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Use a SMBoardItem to display the result. Perfect when you have more than a few lines to display. The back navigation arrow will also shows and send the user back to the menu.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -1198,9 +1198,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Disabled</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Set the menu item to disabled. A menu item can also be disabled/enabled if $_.Disabled = $true or $false is set in the action block of that same item.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -1210,9 +1210,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ForegroundColor</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Foreground color of menu item.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ConsoleColor</command:parameterValue>
         <dev:type>
           <maml:name>ConsoleColor</maml:name>
@@ -1222,9 +1222,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Id</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>ID of menu item. Used to get item and perform changes after creation (optional)</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
           <maml:name>Object</maml:name>
@@ -1234,9 +1234,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Key</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Letter character associated to the menu item. If none defined, a number will be assigned to the item instead.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">ConsoleKey</command:parameterValue>
         <dev:type>
           <maml:name>ConsoleKey</maml:name>
@@ -1246,9 +1246,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Pause</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Pause after invoking action (Default:False)</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -1258,9 +1258,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Quit</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>If defined, choosing this menu item will exit the current menu. If the current menu is a submenu, this will bring back to parent menu,</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -1270,9 +1270,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Submenu</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Set this menu item to open a submenu as action.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
         <dev:type>
           <maml:name>PSObject</maml:name>
@@ -1282,9 +1282,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>Title</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Display text of menu item.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
           <maml:name>String</maml:name>
@@ -1328,9 +1328,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
         <maml:name>Set-SMOptions</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>Language</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Language of the hard coded elements (en/fr)</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
             <maml:name>Object</maml:name>
@@ -1343,9 +1343,9 @@ Invoke-SMMenu -Menu $Menu</dev:code>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>Language</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Language of the hard coded elements (en/fr)</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
           <maml:name>Object</maml:name>

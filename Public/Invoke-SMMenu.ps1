@@ -1,5 +1,5 @@
 function Invoke-SMMenu {
-    [cmdletbinding()]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/Invoke-SMMenu.md')]
     param(
         [ValidateNotNull()][SMMenu]$Menu,
         [Switch]$PassThru
