@@ -1,5 +1,5 @@
 function Set-SMOptions {
-    [CMDLetBinding()]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/Set-SMOptions.md')]
     Param(
         $Language = 'en'
     )

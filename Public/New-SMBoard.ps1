@@ -1,5 +1,5 @@
 function New-SMBoard {
-    [cmdletbinding()]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/New-SMBoard.md')]
     param( 
         $Title,
         [SMBoardItem[]] $Items,

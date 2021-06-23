@@ -1,5 +1,5 @@
 function Invoke-SMBoard {
-    [cmdletbinding()]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/Invoke-SMBoard.md')]
 
     Param(
         [ValidateNotNull()][SMBoard]$Board
