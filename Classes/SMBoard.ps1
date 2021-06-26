@@ -11,7 +11,6 @@
     [psobject]$CurrentActionBoard = $null
 
 
-
     [Void]Print() {
     #    ▲△▴▵     ▶▷▸▹ ▼▽▾▿ ◀◁◂◃
     Clear-Host
@@ -48,12 +47,8 @@
         $QuitAction = New-SMMenuItem -Key $QuitActionKey -Quit ; $QuitAction.RuntimeKey = $QuitActionKey
         $QuitAction1 = New-SMMenuItem -Key $QuitAction1Key -Quit ; $QuitAction1.RuntimeKey = $QuitAction1Key
 
-        #if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$CurrentItem.Menu.ActionItems+= $QuitAction}
-        #if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$CurrentItem.Menu.ActionItems+= $QuitAction1}
         $CurrentItem.Menu.ActionItems+= $QuitAction
-        $CurrentItem.Menu.ActionItems+= $QuitAction1
-                      
-        
+        $CurrentItem.Menu.ActionItems+= $QuitAction1        
 
         Invoke-SMMenu $CurrentItem.Menu
         $CurrentItem.menu.Title = $InTitle
@@ -98,37 +93,33 @@
     }
     }
 
-[Void]PreviousBoard() {
-    if ($this.CurrentActionBoard -ne $null) {
-        $this.CurrentActionBoard.Index = 0
-        $this.CurrentActionBoard = $null
-        $this.Print()
-    }
-    elseif ($this.Index -gt 0)  {
-        $this.Index -=1
+    [Void]ChangeDisplayedItem([int]$index) {
+        $this.Index = $index
         $this.Items[$this.Index].Index = 0
         $this.Print()
     }
-    elseif ($this.Index -eq 0)  {
-        $this.Index = $this.Items.Count-1
-        $this.Items[$this.Index].Index = 0
-        $this.Print()
-    }
-}
 
-   #Test
+    [Void]PreviousBoard() {
+        if ($this.CurrentActionBoard -ne $null) {
+            $this.CurrentActionBoard.Index = 0
+            $this.CurrentActionBoard = $null
+            $this.Print()
+        }
+        elseif ($this.Index -gt 0)  {
+            $this.ChangeDisplayedItem($this.Index - 1)
+        }
+        elseif ($this.Index -eq 0)  {
+            $this.ChangeDisplayedItem($this.Items.Count-1)
+        }
+    }
 
     [Void]NextBoard() {
         if ($this.CurrentActionBoard -eq $null) {
 
             if ($this.Index -lt $this.Items.Count -1)  {
-                $this.Index +=1
-                $this.Items[$this.Index].Index = 0
-                $this.Print()
+                $this.ChangeDisplayedItem($this.Index + 1)
             } elseif ($this.Index -eq $this.Items.Count -1) {
-                $this.Index = 0
-                $this.Items[$this.Index].Index = 0
-                $this.Print()
+                $this.ChangeDisplayedItem(0)
             }
         }
     }
