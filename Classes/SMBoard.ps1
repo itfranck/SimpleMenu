@@ -48,10 +48,10 @@
         $QuitAction = New-SMMenuItem -Key $QuitActionKey -Quit ; $QuitAction.RuntimeKey = $QuitActionKey
         $QuitAction1 = New-SMMenuItem -Key $QuitAction1Key -Quit ; $QuitAction1.RuntimeKey = $QuitAction1Key
 
-        if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$CurrentItem.Menu.ActionItems+= $QuitAction}
-        if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$CurrentItem.Menu.ActionItems+= $QuitAction1}
-
-        
+        #if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$CurrentItem.Menu.ActionItems+= $QuitAction}
+        #if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$CurrentItem.Menu.ActionItems+= $QuitAction1}
+        $CurrentItem.Menu.ActionItems+= $QuitAction
+        $CurrentItem.Menu.ActionItems+= $QuitAction1
                       
         
 
@@ -109,16 +109,27 @@
         $this.Items[$this.Index].Index = 0
         $this.Print()
     }
-    
+    elseif ($this.Index -eq 0)  {
+        $this.Index = $this.Items.Count-1
+        $this.Items[$this.Index].Index = 0
+        $this.Print()
+    }
 }
 
-   
+   #Test
 
     [Void]NextBoard() {
-        if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null)  {
-            $this.Index +=1
-            $this.Items[$this.Index].Index = 0
-            $this.Print()
+        if ($this.CurrentActionBoard -eq $null) {
+
+            if ($this.Index -lt $this.Items.Count -1)  {
+                $this.Index +=1
+                $this.Items[$this.Index].Index = 0
+                $this.Print()
+            } elseif ($this.Index -eq $this.Items.Count -1) {
+                $this.Index = 0
+                $this.Items[$this.Index].Index = 0
+                $this.Print()
+            }
         }
     }
 
