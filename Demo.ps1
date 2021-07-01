@@ -16,7 +16,7 @@ Function UninstallService() {
 
 
 $OptionsMenu = New-SMMenu  -Title 'Options' -TitleForegroundColor Red   -Items @(
-   "Enter Powershell prompt"                   | New-SMMenuItem -Action { Write-host 'Type exit to go back to menu'; $host.enternestedprompt() } 
+   "Enter Powershell prompt"                   | New-SMMenuItem -Action { Write-host 'Type exit to go back to menu'; $host.enternestedprompt();$menu.print() } 
    "Edit this menu"                            | New-SMMenuItem -Action { powershell_ise.exe "$ScriptFullPath" }
    "Display script full path"                  | New-SMMenuItem  -Action { Write-Host $ScriptFullPath -ForegroundColor Yellow }
    "Back"                                      | New-SMMenuItem -Key B -Quit
