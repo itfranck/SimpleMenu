@@ -26,38 +26,35 @@
     $Arrow1 = '|˂'
     $Arrow2 = '˃|'
     $Arrow3 = ''
-        if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '˂'}
-        if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '˃'}
+    if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '˂'}
+    if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '˃'}
+
+    # The goal is to output something like this:
+    #                                                 -----------------
+    # |    Home    |    Builds    |    Deployments    |    Settings    |    Help    |
+    # -------------------------------------------------                --------------
+
+    $topRowStrings = @()
+    $middleRowStrings = @()
+    $bottomRowStrings = @()
+
+    for($i = 0; $i -lt $this.Items.Count; $i += 1) {
         
-        # The goal is to output something like this:
-        #                                                 -----------------
-        # |    Home    |    Builds    |    Deployments    |    Settings    |    Help    |
-        # -------------------------------------------------                --------------
+        $padSize = 3
+        $isSelected = $i -eq $this.Index
+        $cellTitle = $this.Items[$i].Title
+        $cellSize = $cellTitle.Length + 2 * $padSize # padding on each side
+        $topChar = ' '; if ($isSelected) { $topChar = '-' }
+        $topRowStrings += "".PadLeft($cellSize + 1, $topChar)
+        $paddedTitle = $cellTitle.PadLeft($cellSize - $padSize, ' ').PadRight($cellSize, ' ')
+        $middleRowStrings += "|$paddedTitle"
+        $bottomChar = '-'; if ($isSelected) { $bottomChar = ' ' }
+        $bottomRowStrings += "".PadLeft($cellSize + 1, $bottomChar)
+    }
 
-        $topRowStrings = @()
-        $middleRowStrings = @()
-        $bottomRowStrings = @()
-
-        for($i = 0; $i -lt $this.Items.Count; $i += 1) {
-            
-            $padSize = 3
-            $isSelected = $i -eq $this.Index
-            $cellTitle = $this.Items[$i].Title
-            $cellSize = $cellTitle.Length + 2 * $padSize # padding on each side
-
-            $topChar = ' '; if ($isSelected) { $topChar = '-' }
-            $topRowStrings += "".PadLeft($cellSize + 1, $topChar)
-
-            $paddedTitle = $cellTitle.PadLeft($cellSize - $padSize, ' ').PadRight($cellSize, ' ')
-            $middleRowStrings += "|$paddedTitle"
-
-            $bottomChar = '-'; if ($isSelected) { $bottomChar = ' ' }
-            $bottomRowStrings += "".PadLeft($cellSize + 1, $bottomChar)
-        }
-
-        $topRowString = $topRowStrings -join ''
-        $middleRowString = $middleRowStrings -join ''
-        $bottomRowString = $bottomRowStrings -join ''
+    $topRowString = $topRowStrings -join ''
+    $middleRowString = $middleRowStrings -join ''
+    $bottomRowString = $bottomRowStrings -join ''
 
         $tabs = @"
 $topRowString
