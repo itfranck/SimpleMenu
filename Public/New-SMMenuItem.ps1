@@ -16,7 +16,7 @@ function New-SMMenuItem {
         [Object[]]$ArgumentList
     )
     Begin {
-        if ($PSBoundParameters.ContainsKey('ForegroundColor')) {$PSBoundParameters.Add('ForegroundColorSet',$true)}
+        if ($PSBoundParameters.ContainsKey('ForegroundColor')) { $PSBoundParameters.Add('ForegroundColorSet', $true) }
         $MenuItem = New-Object -TypeName SMMenuItem -Property $PSBoundParameters
     }
     Process {

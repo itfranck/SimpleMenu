@@ -1,5 +1,5 @@
 function New-SMMenu {
-    [cmdletbinding(HelpUri='https://github.com/itfranck/SimpleMenu/blob/master/Help/New-SMMenu.md')]
+    [cmdletbinding(HelpUri = 'https://github.com/itfranck/SimpleMenu/blob/master/Help/New-SMMenu.md')]
     Param(
         [String]$Title,
         [psobject[]]$Items,

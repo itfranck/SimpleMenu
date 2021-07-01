@@ -4,13 +4,13 @@ function Invoke-SMBoard {
     Param(
         [ValidateNotNull()][SMBoard]$Board
     )
-$Board.Index =  $Board.DefaultIndex
-$PageIndex = 0
-$Board.Print()
+    $Board.Index = $Board.DefaultIndex
+    $PageIndex = 0
+    $Board.Print()
 
-  if (![console]::IsInputRedirected) { 
-    while ([Console]::KeyAvailable) {[console]::ReadKey($false) | Out-Null}
-  }
+    if (![console]::IsInputRedirected) { 
+        while ([Console]::KeyAvailable) { [console]::ReadKey($false) | Out-Null }
+    }
 
 
     while ($true) {
@@ -22,30 +22,31 @@ $Board.Print()
             
         }
         else {
-         [System.ConsoleKey]$LineRaw = ([Console]::ReadKey($true)).Key
+            [System.ConsoleKey]$LineRaw = ([Console]::ReadKey($true)).Key
         }
 
 
 
-            Switch ($LineRaw) {
-               ($Board.Previous) {
-                if ($Board.CurrentActionBoard.Quit) {Return}
+        Switch ($LineRaw) {
+            ($Board.Previous) {
+                if ($Board.CurrentActionBoard.Quit) { Return }
                         
-                $Board.PreviousBoard();break}
-               ($Board.Next) {$Board.NextBoard();break}
-               ($Board.PreviousPageKey) {$Board.PreviousPage();break}
-               ($Board.NextPageKey){$Board.NextPage();break}
-               ([System.ConsoleKey]::Escape) {return}
-               Default {
-                if ($Board.CurrentActionBoard.Quit) {break}
-                 $Board.CurrentActionBoard = $Board.ActionItems | where Key -eq $LineRaw
-                 if ($Board.CurrentActionBoard -ne $null ) {
+                $Board.PreviousBoard(); break
+            }
+            ($Board.Next) { $Board.NextBoard(); break }
+            ($Board.PreviousPageKey) { $Board.PreviousPage(); break }
+            ($Board.NextPageKey) { $Board.NextPage(); break }
+            ([System.ConsoleKey]::Escape) { return }
+            Default {
+                if ($Board.CurrentActionBoard.Quit) { break }
+                $Board.CurrentActionBoard = $Board.ActionItems | where Key -eq $LineRaw
+                if ($Board.CurrentActionBoard -ne $null ) {
                     
                     $Board.Print()
-                     break
-                 }
-               }
+                    break
+                }
             }
+        }
     }
 
 

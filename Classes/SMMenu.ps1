@@ -13,13 +13,13 @@
         $This.ActionItems = New-Object System.Collections.Generic.List[PSObject]
 
         $This.runtimeKeys = New-Object System.Collections.ArrayList
-        $AvailablesChar = @(49..57) + @(48) + @(65..90) | % {[System.ConsoleKey]($_)}
+        $AvailablesChar = @(49..57) + @(48) + @(65..90) | % { [System.ConsoleKey]($_) }
         $This.runtimeKeys.AddRange($AvailablesChar)
         
     }
 
     [PSObject]GetItem($id) {
-        $out = ($this.Items | Where-Object {$_.ID -eq $ID} | Select -First 1)
+        $out = ($this.Items | Where-Object { $_.ID -eq $ID } | Select -First 1)
         return $out
     }
 
@@ -32,7 +32,7 @@
         $AllItems.AddRange($this.ActionItems)
 
         $AssignedKeys = $AllItems | Where key -NE $null 
-        $AssignedKeys | % {$AvailableKeys.Remove($_.key);$_.runtimeKey = $_.key}
+        $AssignedKeys | % { $AvailableKeys.Remove($_.key); $_.runtimeKey = $_.key }
 
         $EmptyKeys = $AllItems | Where key -eq $null
         Foreach ($key in $EmptyKeys ) {
@@ -54,18 +54,19 @@
         Write-Host "$($this.TitleIndent)$($this.Title)" @TitleParams
         
         $this.Items | % { 
-            $ItemTitle =  "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"
+            $ItemTitle = "$(Get-ConsoleKeyDisplayText $_.runtimeKey). $($_.Title)"
             if ($_.Disabled) {
                 Write-Host $ItemTitle -ForegroundColor DarkGray
-            } else {
+            }
+            else {
                 $ForegroundParam = $null
                 $ForegroundParam = @{}
-               if ($_.ForegroundColorSet) {
-                   $ForegroundParam.Add('ForegroundColor',$_.ForegroundColor)
-               }
+                if ($_.ForegroundColorSet) {
+                    $ForegroundParam.Add('ForegroundColor', $_.ForegroundColor)
+                }
                 Write-Host $ItemTitle @ForegroundParam
             }
-         }
+        }
     }
 }
 

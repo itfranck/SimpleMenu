@@ -11,7 +11,7 @@
         [Object[]]$ArgumentList
     )
 
-     $Item = New-Object -TypeName 'SMBoardItem' -Property $PSBoundParameters
+    $Item = New-Object -TypeName 'SMBoardItem' -Property $PSBoundParameters
 
     Return $Item
 }

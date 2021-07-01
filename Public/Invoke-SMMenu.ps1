@@ -5,11 +5,11 @@ function Invoke-SMMenu {
         [Switch]$PassThru
     )
 
-    if ($PassThru) {$Menu.Print(); return}
+    if ($PassThru) { $Menu.Print(); return }
     $Debug = ($psboundparameters.debug.ispresent -eq $true)
 
     [WarningMessages]$InvalidChoice = [WarningMessages]::None
-    if (-not   $Debug ){Clear-Host}
+    if (-not   $Debug ) { Clear-Host }
     $Menu.Print()
     
     while ($true) {
@@ -25,16 +25,16 @@ function Invoke-SMMenu {
             [System.ConsoleKeyInfo]$LineRaw = [Console]::ReadKey($true)
             $Line = $LineRaw.Key
         }
-        $Result = @($Menu.Items | Where {$_.runtimeKey -eq $Line -and -not $_.Disabled } )
+        $Result = @($Menu.Items | Where { $_.runtimeKey -eq $Line -and -not $_.Disabled } )
         if ($Result.Count -eq 0) {
-            $Result = @($Menu.ActionItems | Where {$_.runtimeKey -eq $Line -and -not $_.Disabled })
+            $Result = @($Menu.ActionItems | Where { $_.runtimeKey -eq $Line -and -not $_.Disabled })
         }
 
         if ($Result.Count -gt 0) {
-            $Result =$Result |select -First 1
+            $Result = $Result | select -First 1
             $ShouldPause = $Result.Pause
             if ($Result.Submenu -eq $null -or $Result.Quit -eq $false ) {
-                if (-not $Debug ){Clear-Host} ; $Menu.Print()
+                if (-not $Debug ) { Clear-Host } ; $Menu.Print()
             }
 
             if ($Result.Action -ne $null) {
@@ -60,7 +60,7 @@ function Invoke-SMMenu {
                     $ShouldPause = $true
                 }
 
-                if ($ShouldPause -eq $true) {Pause;  if (-not $Debug ){Clear-Host} ; $Menu.Print()  }
+                if ($ShouldPause -eq $true) { Pause; if (-not $Debug ) { Clear-Host } ; $Menu.Print() }
 
             }
             else {
@@ -71,7 +71,7 @@ function Invoke-SMMenu {
 
         }
         else {
-            if (-not $Debug ){Clear-Host} ; $Menu.Print()
+            if (-not $Debug ) { Clear-Host } ; $Menu.Print()
             $InvalidChoice = [WarningMessages]::InvalidChoice
         }
 
@@ -82,7 +82,7 @@ function Invoke-SMMenu {
 
         if ($Result.Quit -eq $true) {
             if ($Menu.Parent -ne $null) {
-                if (-not   $Debug ){Clear-Host}
+                if (-not   $Debug ) { Clear-Host }
                 $Menu.Parent.Print()
             }
             $Menu.QuitKey = $Line
@@ -92,11 +92,11 @@ function Invoke-SMMenu {
 
 
         if ( ($InvalidChoice -ne [WarningMessages]::None) ) {
-            Switch($InvalidChoice) {
-                ([WarningMessages]::NoActionDefined) {  Write-Warning $Messages.Warning_NoActions}
+            Switch ($InvalidChoice) {
+                ([WarningMessages]::NoActionDefined) { Write-Warning $Messages.Warning_NoActions }
                 ([WarningMessages]::InvalidChoice) {
                     Write-Warning ($Messages.Warning_InvalidChoice -f (Get-ConsolekeyDisplayText $Line))
-                    $IDs = ($menu.Items.runtimeKey | % {Get-ConsolekeyDisplayText $_}) -join ','
+                    $IDs = ($menu.Items.runtimeKey | % { Get-ConsolekeyDisplayText $_ }) -join ','
                     Write-Host ($Messages.info_validChoices -f $IDs)
                 }
             }

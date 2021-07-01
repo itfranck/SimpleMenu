@@ -1,14 +1,11 @@
-$functionFolders = @('Internal','Classes','Public')
+$functionFolders = @('Internal', 'Classes', 'Public')
 $ModuleRoot = $PSScriptRoot
-ForEach ($folder in $functionFolders)
-{
+ForEach ($folder in $functionFolders) {
     $folderPath = Join-Path -Path $PSScriptRoot -ChildPath $folder
-    If (Test-Path -Path $folderPath)
-    {
+    If (Test-Path -Path $folderPath) {
         Write-Verbose -Message "Importing from $folder"
         $functions = Get-ChildItem -Path $folderPath -Filter '*.ps1' 
-        ForEach ($function in $functions)
-        {
+        ForEach ($function in $functions) {
             Write-Verbose -Message "  Importing $($function.BaseName)"
             . $($function.FullName)
         }
