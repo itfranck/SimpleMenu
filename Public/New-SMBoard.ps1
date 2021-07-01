@@ -4,7 +4,8 @@ function New-SMBoard {
         $Title,
         [SMBoardItem[]] $Items,
         [SMBoardItem[]]$ActionItems,
-        [INT]$DefaultIndex
+        [INT]$DefaultIndex,
+        [Switch]$UseTabs
     )
 
     $ALLKeys = New-Object System.Collections.ArrayList
