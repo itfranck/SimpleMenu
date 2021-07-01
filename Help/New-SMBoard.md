@@ -14,7 +14,7 @@ Create a new SMBoard to display informations in an organized method.
 
 ```
 New-SMBoard [[-Title] <Object>] [[-Items] <SMBoardItem[]>] [[-ActionItems] <SMBoardItem[]>]
- [[-DefaultIndex] <Int32>] [<CommonParameters>]
+ [[-DefaultIndex] <Int32>] [-UseTabs] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,6 +94,21 @@ Aliases:
 
 Required: False
 Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseTabs
+Display tabs at the top of the board for a clear navigation.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
