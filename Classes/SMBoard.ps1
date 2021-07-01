@@ -62,39 +62,35 @@ $middleRowString|
 $bottomRowString
 "@
 
-        if ($CurrentItem.menu -ne $null) {
-            $OutTitle = "{0} $($This.Title) — $($CurrentItem.Title) {2} {1}" -f $Arrow1,$Arrow2,$Arrow3
-            $inIndent =   $CurrentItem.Menu.TitleIndent
-            $inActionItems = $CurrentItem.Menu.ActionItems
-            $InTitle = $CurrentItem.Menu.Title
-            $CurrentItem.Menu.TitleIndent = ''
-            
-            $CurrentItem.Menu.Title = $OutTitle
-            if ($this.UseTabs) { $CurrentItem.Menu.Title = $tabs }
-
-            $QuitActionKey = [System.ConsoleKey]::LeftArrow
-            $QuitAction1Key = [System.ConsoleKey]::RightArrow
-            if ([Console]::IsInputRedirected) {
-                $QuitActionKey = [System.ConsoleKey]::A
-                $QuitAction1Key = [System.ConsoleKey]::D
-            }
-
-            $QuitAction = New-SMMenuItem -Key $QuitActionKey -Quit ; $QuitAction.RuntimeKey = $QuitActionKey
-            $QuitAction1 = New-SMMenuItem -Key $QuitAction1Key -Quit ; $QuitAction1.RuntimeKey = $QuitAction1Key
-
-            $CurrentItem.Menu.ActionItems+= $QuitAction
-            $CurrentItem.Menu.ActionItems+= $QuitAction1        
-
-            Invoke-SMMenu $CurrentItem.Menu
-            $CurrentItem.menu.Title = $InTitle
-            $CurrentItem.Menu.TitleIndent = $inIndent
-            $CurrentItem.Menu.ActionItems = $inActionItems
-            switch ($CurrentItem.Menu.QuitKey) {
-                {$_ -in 'LeftArrow','A'} {$this.PreviousBoard() }
-                {$_ -in 'RightArrow','D'} {$this.NextBoard()}
-            }
-            return
+    if ($CurrentItem.menu -ne $null) {
+        $OutTitle = "{0} $($This.Title) — $($CurrentItem.Title) {2} {1}" -f $Arrow1,$Arrow2,$Arrow3
+        $inIndent =   $CurrentItem.Menu.TitleIndent
+        $inActionItems = $CurrentItem.Menu.ActionItems
+        $InTitle = $CurrentItem.Menu.Title
+        $CurrentItem.Menu.TitleIndent = ''
+        
+        $CurrentItem.Menu.Title = $OutTitle
+        if ($this.UseTabs) { $CurrentItem.Menu.Title = $tabs }
+        $QuitActionKey = [System.ConsoleKey]::LeftArrow
+        $QuitAction1Key = [System.ConsoleKey]::RightArrow
+        if ([Console]::IsInputRedirected) {
+            $QuitActionKey = [System.ConsoleKey]::A
+            $QuitAction1Key = [System.ConsoleKey]::D
         }
+        $QuitAction = New-SMMenuItem -Key $QuitActionKey -Quit ; $QuitAction.RuntimeKey = $QuitActionKey
+        $QuitAction1 = New-SMMenuItem -Key $QuitAction1Key -Quit ; $QuitAction1.RuntimeKey = $QuitAction1Key
+        $CurrentItem.Menu.ActionItems+= $QuitAction
+        $CurrentItem.Menu.ActionItems+= $QuitAction1        
+        Invoke-SMMenu $CurrentItem.Menu
+        $CurrentItem.menu.Title = $InTitle
+        $CurrentItem.Menu.TitleIndent = $inIndent
+        $CurrentItem.Menu.ActionItems = $inActionItems
+        switch ($CurrentItem.Menu.QuitKey) {
+            {$_ -in 'LeftArrow','A'} {$this.PreviousBoard() }
+            {$_ -in 'RightArrow','D'} {$this.NextBoard()}
+        }
+        return
+    }
 
 
         if ($CurrentItem.Pages.Count -gt 1) {
