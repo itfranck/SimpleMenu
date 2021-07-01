@@ -23,9 +23,9 @@
             $CurrentItem = $this.Items[$this.Index]
         }
         #˂˃˄˅
-        $Arrow1 = '|˂'
-        $Arrow2 = '˃|'
-        $Arrow3 = ''
+    $Arrow1 = '|˂'
+    $Arrow2 = '˃|'
+    $Arrow3 = ''
         if ($this.Index -gt 0 -or $this.CurrentActionBoard -ne $null)  {$Arrow1 = '˂'}
         if ($this.Index -lt $this.Items.Count -1 -and $this.CurrentActionBoard -eq $null) {$Arrow2 = '˃'}
         
