@@ -135,19 +135,19 @@ $bottomRowString
         $this.Print()
     }
 
-    [Void]PreviousBoard() {
-        if ($this.CurrentActionBoard -ne $null) {
-            $this.CurrentActionBoard.Index = 0
-            $this.CurrentActionBoard = $null
-            $this.Print()
-        }
-        elseif ($this.Index -gt 0)  {
-            $this.ChangeDisplayedItem($this.Index - 1)
-        }
-        elseif ($this.Index -eq 0)  {
-            $this.ChangeDisplayedItem($this.Items.Count-1)
-        }
+[Void]PreviousBoard() {
+    if ($this.CurrentActionBoard -ne $null) {
+        $this.CurrentActionBoard.Index = 0
+        $this.CurrentActionBoard = $null
+        $this.Print()
     }
+    elseif ($this.Index -gt 0)  {
+        $this.ChangeDisplayedItem($this.Index - 1)
+    }
+    elseif ($this.Index -eq 0)  {
+        $this.ChangeDisplayedItem($this.Items.Count-1)
+    }
+}
 
     [Void]NextBoard() {
         if ($this.CurrentActionBoard -eq $null) {
