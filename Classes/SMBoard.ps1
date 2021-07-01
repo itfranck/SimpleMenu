@@ -13,16 +13,16 @@
 
 
     [Void]Print() {
-        #    ▲△▴▵     ▶▷▸▹ ▼▽▾▿ ◀◁◂◃
-        Clear-Host
+    #    ▲△▴▵     ▶▷▸▹ ▼▽▾▿ ◀◁◂◃
+    Clear-Host
 
-        if ($this.CurrentActionBoard -ne $null) {
-            $CurrentItem = $this.CurrentActionBoard
-        }
-        else {
-            $CurrentItem = $this.Items[$this.Index]
-        }
-        #˂˃˄˅
+    if ($this.CurrentActionBoard -ne $null) {
+        $CurrentItem = $this.CurrentActionBoard
+    }
+    else {
+        $CurrentItem = $this.Items[$this.Index]
+    }
+    #˂˃˄˅
     $Arrow1 = '|˂'
     $Arrow2 = '˃|'
     $Arrow3 = ''
